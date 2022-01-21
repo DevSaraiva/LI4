@@ -28,7 +28,7 @@ public class HorarioDAO {
             if (rs.next()) {
                 LocalTime abertura = rs.getTime(3).toLocalTime();
                 LocalTime encerramento = rs.getTime(4).toLocalTime();
-                String dia = rs.getString(4);
+                String dia = rs.getString(5);
 
                 return new Horario(idHorario, abertura, encerramento, dia);
             }
@@ -40,13 +40,14 @@ public class HorarioDAO {
     }
 
     public boolean addHorario(int idParque, Horario horario) {
-        String sql = "INSERT INTO Horarios(idHorario,Parques_idParque,HoraDeAbertura,HoraDeEncerramento) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO Horarios(idHorario,Parques_idParque,HoraDeAbertura,HoraDeEncerramento,Dia) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, horario.getIdHorario());
             stmt.setInt(2, idParque);
             stmt.setTime(3, Time.valueOf(horario.getAbertura()));
             stmt.setTime(4, Time.valueOf(horario.getEncerramento()));
+            stmt.setString(5, horario.getDia());
             stmt.execute();
             return true;
         } catch (SQLException e) {
@@ -85,18 +86,19 @@ public class HorarioDAO {
         }
     }
 
-    public List<Horario> getHorarios() {
+    public List<Horario> getHorarios(int idParque) {
         List<Horario> horarios = new ArrayList<>();
-        String sql = "SELECT * FROM Horarios";
+        String sql = "SELECT * FROM Horarios WHERE Parques_idParque=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, idParque);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
 
                 int idHorario = rs.getInt(1);
-                LocalTime abertura = rs.getTime(2).toLocalTime();
-                LocalTime encerramento = rs.getTime(3).toLocalTime();
-                String dia = rs.getString(4);
+                LocalTime abertura = rs.getTime(3).toLocalTime();
+                LocalTime encerramento = rs.getTime(4).toLocalTime();
+                String dia = rs.getString(5);
 
 
                 Horario horario = new Horario(idHorario, abertura, encerramento, dia);
@@ -113,7 +115,7 @@ public class HorarioDAO {
 
         Horario h = new Horario(1,LocalTime.of(8,0), LocalTime.of(19,20), "segunda");
 
-        System.out.println(dao.getHorario(1));
+        System.out.println(dao.getHorarios(1));
 
 
     }

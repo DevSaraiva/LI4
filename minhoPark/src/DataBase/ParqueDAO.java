@@ -4,6 +4,7 @@ import model.Categoria;
 import model.Horario;
 import model.Parque;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +30,12 @@ public class ParqueDAO {
                 int id = rs.getInt(1);
                 String nome = rs.getString(2);
                 Blob imagem = rs.getBlob(3);
-                String endereço = rs.getString(4);
+                String endereco = rs.getString(4);
                 String coordenadas = rs.getString(5);
                 int nrCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
+
+                return new Parque(id,nome,null,endereco,coordenadas,nrCriticas,rating);
 
 
             }
@@ -49,7 +52,7 @@ public class ParqueDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1,parque.getParqueID());
             stmt.setString(2,parque.getNome());
-            stmt.setBlob(3, parque.getImage());
+            stmt.setBlob(3, InputStream.nullInputStream());
             stmt.setString(4, parque.getEndereco());
             stmt.setString(5,parque.getCoordenadas());
             stmt.setInt(6,parque.getNumCriticas());
@@ -68,7 +71,7 @@ public class ParqueDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1,parque.getParqueID());
             stmt.setString(2,parque.getNome());
-            stmt.setBlob(3, parque.getImage());
+            stmt.setBlob(3, (InputStream) null);
             stmt.setString(4, parque.getEndereco());
             stmt.setString(5,parque.getCoordenadas());
             stmt.setInt(6,parque.getNumCriticas());
@@ -108,7 +111,7 @@ public class ParqueDAO {
                 String coordenadas = rs.getString(5);
                 int numCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
-                Parque parque = new Parque(parqueID, nome,image,endereco,coordenadas,numCriticas,rating);
+                Parque parque = new Parque(parqueID, nome,null,endereco,coordenadas,numCriticas,rating);
                 parques.add(parque);
             }
         } catch (SQLException e) {

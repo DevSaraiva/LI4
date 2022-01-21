@@ -1,13 +1,12 @@
 package model;
 
-import java.sql.Blob;
 import java.util.List;
 
 public class Parque {
 
     int parqueID;
     String nome;
-    Blob image;
+    String image;
     String endereco;
     String coordenadas;
     int numCriticas;
@@ -16,7 +15,7 @@ public class Parque {
     List<Categoria> categorias;
 
 
-    public Parque(int parqueID, String nome, Blob image, String endereco, String coordenadas, int numCriticas, int rating) {
+    public Parque(int parqueID, String nome, String image, String endereco, String coordenadas, int numCriticas, int rating) {
         this.parqueID = parqueID;
         this.nome = nome;
         this.image = image;
@@ -43,7 +42,7 @@ public class Parque {
         return nome;
     }
 
-    public Blob getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -76,7 +75,7 @@ public class Parque {
         this.nome = nome;
     }
 
-    public void setImg(Blob pathToImg) {
+    public void setImg(String pathToImg) {
         this.image = pathToImg;
     }
 
