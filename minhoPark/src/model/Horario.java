@@ -17,6 +17,15 @@ public class Horario {
         this.dia = dia;
     }
 
+    @Override
+    public String toString() {
+        return "Horario{" +
+                "idHorario=" + idHorario +
+                ", abertura=" + abertura +
+                ", encerramento=" + encerramento +
+                ", dia='" + dia + '\'' +
+                '}';
+    }
 
     public int getIdHorario() {
         return idHorario;

@@ -1,13 +1,12 @@
 package model;
 
-import java.sql.Blob;
 import java.util.List;
 
 public class Parque {
 
     int parqueID;
     String nome;
-    Blob image;
+    String image;
     String endereco;
     String coordenadas;
     int numCriticas;
@@ -16,7 +15,7 @@ public class Parque {
     List<Categoria> categorias;
 
 
-    public Parque(int parqueID, String nome, Blob image, String endereco, String coordenadas, int numCriticas, int rating) {
+    public Parque(int parqueID, String nome, String image, String endereco, String coordenadas, int numCriticas, int rating, List<Horario> horarios, List<Categoria> categorias) {
         this.parqueID = parqueID;
         this.nome = nome;
         this.image = image;
@@ -24,6 +23,8 @@ public class Parque {
         this.coordenadas = coordenadas;
         this.numCriticas = numCriticas;
         this.rating = rating;
+        this.horarios = horarios;
+        this.categorias = categorias;
     }
 
 
@@ -43,7 +44,7 @@ public class Parque {
         return nome;
     }
 
-    public Blob getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -76,7 +77,7 @@ public class Parque {
         this.nome = nome;
     }
 
-    public void setImg(Blob pathToImg) {
+    public void setImg(String pathToImg) {
         this.image = pathToImg;
     }
 
@@ -92,17 +93,6 @@ public class Parque {
         this.rating = rating;
     }
 
-    @Override
-    public String toString() {
-        return "Parque{" +
-                "parqueID=" + parqueID +
-                ", nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", coordenadas='" + coordenadas + '\'' +
-                ", numCriticas=" + numCriticas +
-                ", rating=" + rating +
-                '}';
-    }
 
     public void setHorarios(List<Horario> horarios) {
         this.horarios = horarios;
@@ -110,5 +100,20 @@ public class Parque {
 
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
+    }
+
+    @Override
+    public String toString() {
+        return "Parque{" +
+                "parqueID=" + parqueID +
+                ", nome='" + nome + '\'' +
+                ", image='" + image + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", coordenadas='" + coordenadas + '\'' +
+                ", numCriticas=" + numCriticas +
+                ", rating=" + rating +
+                ", horarios=" + horarios +
+                ", categorias=" + categorias +
+                '}';
     }
 }
