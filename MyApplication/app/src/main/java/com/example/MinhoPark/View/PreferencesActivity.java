@@ -50,6 +50,7 @@ public class PreferencesActivity extends AppCompatActivity {
                         break;
 
                     case R.id.radioButtonOutraLoc:
+                        // TODO - buscar ao campo de texto
                         p.setLoc("LocOutra");
                         break;
                 }
