@@ -11,10 +11,14 @@ import java.util.List;
 
 public class ParqueDAO {
     private Connection connection;
+    private CategoriaDAO categoriaDAO;
+    private HorarioDAO horarioDAO;
 
     public ParqueDAO() {
         try{
             this.connection = ConnectDB .getConnection();
+            this.categoriaDAO = new CategoriaDAO();
+            this.horarioDAO = new HorarioDAO();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,13 +34,17 @@ public class ParqueDAO {
                 int id = rs.getInt(1);
                 String nome = rs.getString(2);
                 Blob imagem = rs.getBlob(3);
+                String filename = "parque" + id;
+                String filePath = ConnectDB.convertToFile(imagem, filename);
                 String endereco = rs.getString(4);
                 String coordenadas = rs.getString(5);
                 int nrCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
 
-                return new Parque(id,nome,null,endereco,coordenadas,nrCriticas,rating);
+                List<Categoria> categorias = this.categoriaDAO.getCategorias(parqueID);
+                List<Horario> horarios = this.horarioDAO.getHorarios(parqueID);
 
+                return new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
 
             }
             connection.close();
@@ -104,14 +112,20 @@ public class ParqueDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                int parqueID = rs.getInt(1);
+                int id = rs.getInt(1);
                 String nome = rs.getString(2);
-                Blob image = rs.getBlob(3);
+                Blob imagem = rs.getBlob(3);
+                String filename = "parque" + id;
+                String filePath = ConnectDB.convertToFile(imagem, filename);
                 String endereco = rs.getString(4);
                 String coordenadas = rs.getString(5);
-                int numCriticas = rs.getInt(6);
+                int nrCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
-                Parque parque = new Parque(parqueID, nome,null,endereco,coordenadas,numCriticas,rating);
+
+                List<Categoria> categorias = this.categoriaDAO.getCategorias(id);
+                List<Horario> horarios = this.horarioDAO.getHorarios(id);
+
+                Parque parque = new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
                 parques.add(parque);
             }
         } catch (SQLException e) {
@@ -123,9 +137,11 @@ public class ParqueDAO {
     public static void main(String args[]){
         ParqueDAO dao = new ParqueDAO();
 
-        Parque p = new Parque(1,"Florestal",null,"rua matos","x:13,y:14,z:50",2,5);
+        //Parque p = new Parque(1,"Florestal",null,"rua matos","x:13,y:14,z:50",2,5,null,null);
 
-        dao.addParque(p);
+        //dao.addParque(p);
+
+        System.out.println(dao.getParques());
     }
 
 }

@@ -1,12 +1,9 @@
 package DataBase;
 
 import model.Categoria;
-import model.Horario;
-import model.Parque;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +27,7 @@ public class CategoriaDAO {
             if (rs.next()) {
 
                 Blob image = rs.getBlob(3);
+                String path = ConnectDB.convertToFile(image,"categoria" + idCategoria);
                 String descricao = rs.getString(4);
 
                 return new Categoria(idCategoria, null,descricao);
@@ -48,7 +46,7 @@ public class CategoriaDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, categoria.getIdCategoria());
             stmt.setInt(2, idParque);
-            stmt.setBlob(3, InputStream.nullInputStream());
+            stmt.setBlob(3, ConnectDB.convertFileContentToBlob(categoria.getIconePath()));
             stmt.setString(4,categoria.getDescricao());
             stmt.execute();
             return true;
@@ -98,10 +96,11 @@ public class CategoriaDAO {
 
                 int idCategoria = rs.getInt(1);
                 Blob image = rs.getBlob(3);
+                String imagePath = ConnectDB.convertToFile(image,"categoria" + idCategoria);
                 String descricao = rs.getString(4);
 
 
-                Categoria categoria = new Categoria(idCategoria, null, descricao);
+                Categoria categoria = new Categoria(idCategoria, imagePath, descricao);
                 categorias.add(categoria);
             }
         } catch (SQLException e) {
@@ -113,15 +112,7 @@ public class CategoriaDAO {
     public static void main(String args[]){
         CategoriaDAO dao = new CategoriaDAO();
 
-        Categoria categoria = new Categoria(1,null,"bom lugar");
-
-
-        dao.removeCategoria(1);
-
-        System.out.println(dao.getCategorias(1));
-
-
-
+        Categoria categoria = dao.getCategoria(1);
 
     }
 
