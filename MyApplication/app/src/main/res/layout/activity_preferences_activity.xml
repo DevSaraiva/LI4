@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".PreferencesActivity">
+        tools:context=".View.PreferencesActivity">
 
         <ImageView
             android:id="@+id/imageView5"
@@ -105,7 +105,7 @@
         </RadioGroup>
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/switchParqueLazer"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
@@ -115,103 +115,103 @@
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch2"
+            android:id="@+id/switchParqueUrbano"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="@+id/switch1"
-            app:layout_constraintTop_toBottomOf="@+id/switch1"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueLazer"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueLazer"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch3"
+            android:id="@+id/switchParqueInfatil"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="@+id/switch2"
-            app:layout_constraintTop_toBottomOf="@+id/switch2"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueUrbano"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueUrbano"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch4"
+            android:id="@+id/switchParqueCampismo"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch3"
-            app:layout_constraintTop_toBottomOf="@+id/switch3"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueInfatil"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueInfatil"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch5"
+            android:id="@+id/switchParqueDiversoes"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch4"
-            app:layout_constraintTop_toBottomOf="@+id/switch4"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueCampismo"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueCampismo"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch6"
+            android:id="@+id/switchParquePatinagem"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch5"
-            app:layout_constraintTop_toBottomOf="@+id/switch5"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueDiversoes"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueDiversoes"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch7"
+            android:id="@+id/switchParqueEcologico"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch6"
-            app:layout_constraintTop_toBottomOf="@+id/switch6"
+            app:layout_constraintStart_toStartOf="@+id/switchParquePatinagem"
+            app:layout_constraintTop_toBottomOf="@+id/switchParquePatinagem"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch8"
+            android:id="@+id/switchParqueCidade"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch7"
-            app:layout_constraintTop_toBottomOf="@+id/switch7"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueEcologico"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueEcologico"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch9"
+            android:id="@+id/switchParqueEstatal"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch8"
-            app:layout_constraintTop_toBottomOf="@+id/switch8"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueCidade"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueCidade"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch10"
+            android:id="@+id/switchParqueNacional"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch9"
-            app:layout_constraintTop_toBottomOf="@+id/switch9"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueEstatal"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueEstatal"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:id="@+id/switch11"
+            android:id="@+id/switchJardim"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            app:layout_constraintStart_toStartOf="@+id/switch10"
-            app:layout_constraintTop_toBottomOf="@+id/switch10"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueNacional"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueNacional"
             tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
         <Switch
-            android:id="@+id/switch12"
+            android:id="@+id/switchParqueNatural"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginBottom="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/switch11"
+            app:layout_constraintStart_toStartOf="@+id/switchJardim"
             app:layout_constraintTop_toBottomOf="@+id/buttonBack"
             tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
 
@@ -223,7 +223,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="839dp"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@+id/switch12"
+            app:layout_constraintBottom_toTopOf="@+id/switchParqueNatural"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
