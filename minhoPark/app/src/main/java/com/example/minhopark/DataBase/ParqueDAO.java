@@ -6,7 +6,6 @@ import com.example.minhopark.model.Horario;
 import com.example.minhopark.model.Parque;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;

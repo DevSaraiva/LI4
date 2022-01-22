@@ -30,81 +30,82 @@
 20-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:10:9-54
 21        android:supportsRtl="true"
 21-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:11:9-35
-22        android:theme="@style/Theme.MyApplication" >
-22-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:12:9-51
-23        <activity
-23-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:13:9-21:20
-24            android:name="com.example.minhopark.FavouritesActivity"
-24-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:14:13-68
-25            android:exported="true" >
-25-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:15:13-36
-26            <intent-filter>
-26-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:17-69
-27-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
-29-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
-30            </intent-filter>
-31        </activity>
-32        <activity
-32-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:22:9-30:20
-33            android:name="com.example.minhopark.PreferencesActivity"
-33-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:23:13-69
-34            android:exported="true" >
-34-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:24:13-36
-35            <intent-filter>
-35-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
-36                <action android:name="android.intent.action.MAIN" />
-36-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:17-69
-36-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:25-66
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
-38-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
-39            </intent-filter>
-40        </activity>
-41        <activity
-41-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:33:9-41:20
-42            android:name="com.example.minhopark.MainActivity"
-42-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:34:13-62
-43            android:exported="true" >
-43-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:35:13-36
-44            <intent-filter>
-44-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
-45                <action android:name="android.intent.action.MAIN" />
-45-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:17-69
-45-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:25-66
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
-47-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
-48            </intent-filter>
-49        </activity>
-50
-51        <provider
-51-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-52            android:name="androidx.startup.InitializationProvider"
-52-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-53            android:authorities="com.example.minhopark.androidx-startup"
-53-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-54            android:exported="false" >
-54-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-55            <meta-data
-55-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-56                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-56-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-57                android:value="androidx.startup" />
-57-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-58            <meta-data
-58-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-59                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-59-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-60                android:value="androidx.startup" />
-60-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-61        </provider>
-62    </application>
-63
-64</manifest>
+22        android:testOnly="true"
+23        android:theme="@style/Theme.MyApplication" >
+23-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:12:9-51
+24        <activity
+24-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:13:9-21:20
+25            android:name="com.example.minhopark.View.FavouritesActivity"
+25-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:14:13-73
+26            android:exported="true" >
+26-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:15:13-36
+27            <intent-filter>
+27-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:17-69
+28-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
+30-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
+31            </intent-filter>
+32        </activity>
+33        <activity
+33-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:22:9-30:20
+34            android:name="com.example.minhopark.View.PreferencesActivity"
+34-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:23:13-74
+35            android:exported="true" >
+35-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:24:13-36
+36            <intent-filter>
+36-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:17-69
+37-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
+39-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity
+42-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:33:9-41:20
+43            android:name="com.example.minhopark.View.MainActivity"
+43-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:34:13-67
+44            android:exported="true" >
+44-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:35:13-36
+45            <intent-filter>
+45-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:17-69
+46-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:17:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
+48-->/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
+49            </intent-filter>
+50        </activity>
+51
+52        <provider
+52-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+53            android:name="androidx.startup.InitializationProvider"
+53-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+54            android:authorities="com.example.minhopark.androidx-startup"
+54-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+55            android:exported="false" >
+55-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+56            <meta-data
+56-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+57                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+57-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+58                android:value="androidx.startup" />
+58-->[androidx.emoji2:emoji2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+59            <meta-data
+59-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+60                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+60-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+61                android:value="androidx.startup" />
+61-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+62        </provider>
+63    </application>
+64
+65</manifest>

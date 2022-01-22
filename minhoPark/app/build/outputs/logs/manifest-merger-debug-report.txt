@@ -94,12 +94,12 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /home/saraiva/.gradle/cache
 		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:7:9-35
 	android:theme
 		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:12:9-51
-activity#com.example.minhopark.FavouritesActivity
+activity#com.example.minhopark.View.FavouritesActivity
 ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:13:9-21:20
 	android:exported
 		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:15:13-36
 	android:name
-		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:14:13-68
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:14:13-73
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
@@ -110,18 +110,18 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
 		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
-activity#com.example.minhopark.PreferencesActivity
+activity#com.example.minhopark.View.PreferencesActivity
 ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:22:9-30:20
 	android:exported
 		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:23:13-69
-activity#com.example.minhopark.MainActivity
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:23:13-74
+activity#com.example.minhopark.View.MainActivity
 ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:33:9-41:20
 	android:exported
 		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:35:13-36
 	android:name
-		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:34:13-62
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:34:13-67
 uses-sdk
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml

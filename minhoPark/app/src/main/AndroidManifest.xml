@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name="com.example.minhopark.FavouritesActivity"
+            android:name="com.example.minhopark.View.FavouritesActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.minhopark.PreferencesActivity"
+            android:name="com.example.minhopark.View.PreferencesActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
 
 
         <activity
-            android:name="com.example.minhopark.MainActivity"
+            android:name="com.example.minhopark.View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
