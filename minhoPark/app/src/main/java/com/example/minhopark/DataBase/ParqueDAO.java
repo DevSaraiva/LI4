@@ -1,9 +1,9 @@
 package com.example.minhopark.DataBase;
 
 
-import com.example.minhopark.model.Categoria;
-import com.example.minhopark.model.Horario;
-import com.example.minhopark.model.Parque;
+import com.example.minhopark.model.SSParques.Categoria;
+import com.example.minhopark.model.SSParques.Horario;
+import com.example.minhopark.model.SSParques.Parque;
 
 import java.io.File;
 import java.io.InputStream;
@@ -19,14 +19,42 @@ public class ParqueDAO {
     private HorarioDAO horarioDAO;
 
     public ParqueDAO() {
-        try{
-            this.connection = ConnectDB .getConnection();
+        try {
+            this.connection = ConnectDB.getConnection();
             this.categoriaDAO = new CategoriaDAO();
             this.horarioDAO = new HorarioDAO();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+    public List<Categoria> getCategorias(int parqueID) {
+
+        try {
+            String sql = "SELECT * FROM Parques_has_Categorias WHERE Parques_idParque=?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, parqueID);
+            ResultSet rs = stmt.executeQuery();
+            List<Categoria> categorias = new ArrayList<>();
+
+            while (rs.next()) {
+                String id = rs.getString(1);
+                Blob imagem = rs.getBlob(2);
+                Categoria categoria = new Categoria(id, null);
+                categorias.add(categoria);
+            }
+
+            return categorias;
+
+        } catch(SQLException e){
+
+            e.printStackTrace();
+        }
+            return null;
+    }
+
+
 
     public Parque getParque(int parqueID) {
         String sql = "SELECT * FROM Parques WHERE iDParque=?";
@@ -45,7 +73,7 @@ public class ParqueDAO {
                 int nrCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
 
-                List<Categoria> categorias = this.categoriaDAO.getCategorias(parqueID);
+                List<Categoria> categorias = this.getCategorias(parqueID);
                 List<Horario> horarios = this.horarioDAO.getHorarios(parqueID);
 
                 return new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
@@ -57,6 +85,24 @@ public class ParqueDAO {
         }
         return null;
     }
+
+    public boolean addCategoriaToPark(int parque, String categoria){
+        String sql = "INSERT INTO Parques_has_Categorias(Parques_idParque,Categorias_idCategoria) VALUES(?,?)";
+
+        try{
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1,parque);
+            stmt.setString(2,categoria);
+            stmt.execute();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
 
     public boolean addParque(Parque parque){
         String sql = "INSERT INTO Parques(idParque,Nome,Imagem,Endereco,Coordenadas,NrCriticas,Rating) VALUES(?,?,?,?,?,?,?)";
@@ -70,6 +116,18 @@ public class ParqueDAO {
             stmt.setInt(6,parque.getNumCriticas());
             stmt.setFloat(7,parque.getRating());
             stmt.execute();
+
+
+            for(Categoria c : parque.getCategorias()){
+                this.addCategoriaToPark(parque.getParqueID(),c.getNome());
+            }
+
+            for(Horario h : parque.getHorarios()){
+                this.horarioDAO.addHorario(parque.getParqueID(),h);
+            }
+
+
+
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -109,27 +167,18 @@ public class ParqueDAO {
         }
     }
 
-    public List<Parque> getParques(){
+    public List<Parque> getParques(String idCategoria){
         List<Parque> parques = new ArrayList<>();
-        String sql = "SELECT * FROM Parques";
+        String sql = "SELECT * FROM Parques_has_Categorias WHERE Categorias_idCategoria=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1,idCategoria);
             ResultSet rs = stmt.executeQuery();
+
             while (rs.next()) {
-                int id = rs.getInt(1);
-                String nome = rs.getString(2);
-                Blob imagem = rs.getBlob(3);
-                String filename = "parque" + id;
-                String filePath = ConnectDB.convertToFile(imagem, filename);
-                String endereco = rs.getString(4);
-                String coordenadas = rs.getString(5);
-                int nrCriticas = rs.getInt(6);
-                int rating = rs.getInt(7);
 
-                List<Categoria> categorias = this.categoriaDAO.getCategorias(id);
-                List<Horario> horarios = this.horarioDAO.getHorarios(id);
-
-                Parque parque = new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
+                int idParque = rs.getInt(1);
+                Parque parque = this.getParque(idParque);
                 parques.add(parque);
             }
         } catch (SQLException e) {
@@ -137,6 +186,8 @@ public class ParqueDAO {
         }
         return parques;
     }
+
+
 
     public static void main(String args[]){
         ParqueDAO dao = new ParqueDAO();
@@ -152,6 +203,7 @@ public class ParqueDAO {
             System.out.println("adeus");
         }
 
+<<<<<<< HEAD
         // Parque px = new Parque(ID Parque, Nome Parque, Path para a pasta onde está a imagem, Endereço, Coordenadas, NCriticas, Rating, Horarios, Categorias)
         Parque p0 = new Parque(0,"Parque da Ponte","/app/src/main/java/com/example/imgs/p0.jpg", "rua matos","41.5416871,-8.418896199999999",4296,4.4,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Parque Urbano" & "Parque da Cidade" & "Parque Infantil");
         Parque p1 = new Parque(1,"Jardim da Avenida Central","/app/src/main/java/com/example/imgs/p1.jpg","Av. Central 116, 4710-249 Braga, Portugal","41.551536,-8.4216509",4670,4.6,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Jardim" & "Parque Infantil" );
@@ -182,12 +234,19 @@ public class ParqueDAO {
         Parque p25 = new Parque(25,"Parque da Cidade de Viana","/app/src/main/java/com/example/imgs/p24.jpg", "Viana do Castelo, Ponte de Lima, Portugal","41.6968733997282, -8.818275501874414",232,4.3,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Parque Urbano" & "Parque Cidade" & "Parque Ecológico");
         Parque p26 = new Parque(26,"Parque Nacional Peneda-Gerês","/app/src/main/java/com/example/imgs/p25.jpg", "Terras de Bouro, Braga, Portugal","41.79636333932538, -8.15010720575464",114,4.6,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Parque Nacional" & "Reserva Natural");
 
+=======
+>>>>>>> 1544ec38e21b9cf0fc94535016bf65758456e4b3
 
+        List<Categoria> categorias = new ArrayList<>();
+        List<Horario> horarios = new ArrayList<>();
+        Categoria categoria = new Categoria("Parque_De_Lazer",null);
+        categorias.add(categoria);
 
+        Parque p = new Parque(1,"Florestal",path,"rua matos","x:13,y:14,z:50",2,5,horarios,categorias);
 
         dao.removeParque(1);
         dao.addParque(p);
-        dao.getParque(1);
+        System.out.println(dao.getParques("Parque_De_Lazer"));
 
     }
 

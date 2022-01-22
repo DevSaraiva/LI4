@@ -1,45 +1,32 @@
-<<<<<<< HEAD
-com/example/minhopark/DataBase/CategoriaDAO.java
- com.example.minhopark.DataBase.CategoriaDAO
-=======
+com/example/minhopark/View/PreferencesActivity.java
+ com.example.minhopark.View.PreferencesActivity
+ com.example.minhopark.View.PreferencesActivity$1
 com/example/minhopark/View/MainActivity.java
  com.example.minhopark.View.MainActivity
  com.example.minhopark.View.MainActivity$1
  com.example.minhopark.View.MainActivity$2
->>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 com/example/minhopark/DataBase/HorarioDAO.java
  com.example.minhopark.DataBase.HorarioDAO
+com/example/MinhoPark/BuildConfig.java
+ com.example.MinhoPark.BuildConfig
+com/example/minhopark/DataBase/ConnectDB.java
+ com.example.minhopark.DataBase.ConnectDB
+com/example/minhopark/model/IParques.java
+ com.example.minhopark.model.IParques
+com/example/minhopark/model/Preferences.java
+ com.example.minhopark.model.Preferences
 com/example/minhopark/View/FavouritesActivity.java
  com.example.minhopark.View.FavouritesActivity
  com.example.minhopark.View.FavouritesActivity$1
-com/example/MinhoPark/BuildConfig.java
- com.example.MinhoPark.BuildConfig
 com/example/minhopark/model/Parque.java
  com.example.minhopark.model.Parque
 com/example/minhopark/model/Horario.java
  com.example.minhopark.model.Horario
-<<<<<<< HEAD
-com/example/minhopark/model/Categoria.java
- com.example.minhopark.model.Categoria
-=======
->>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
-com/example/minhopark/DataBase/ParqueDAO.java
- com.example.minhopark.DataBase.ParqueDAO
-com/example/minhopark/model/Categoria.java
- com.example.minhopark.model.Categoria
-com/example/minhopark/DataBase/ConnectDB.java
- com.example.minhopark.DataBase.ConnectDB
-<<<<<<< HEAD
-com/example/minhopark/View/MainActivity.java
- com.example.minhopark.View.MainActivity
- com.example.minhopark.View.MainActivity$1
- com.example.minhopark.View.MainActivity$2
-=======
 com/example/minhopark/DataBase/CategoriaDAO.java
  com.example.minhopark.DataBase.CategoriaDAO
->>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
-com/example/minhopark/View/PreferencesActivity.java
- com.example.minhopark.View.PreferencesActivity
- com.example.minhopark.View.PreferencesActivity$1
-com/example/minhopark/View/Preferences.java
- com.example.minhopark.View.Preferences
+com/example/minhopark/model/Categoria.java
+ com.example.minhopark.model.Categoria
+com/example/minhopark/model/SSParquesFacade.java
+ com.example.minhopark.model.SSParquesFacade
+com/example/minhopark/DataBase/ParqueDAO.java
+ com.example.minhopark.DataBase.ParqueDAO
