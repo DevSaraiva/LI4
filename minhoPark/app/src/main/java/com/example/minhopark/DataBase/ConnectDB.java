@@ -38,7 +38,7 @@ import java.sql.*;
 
         public static Blob convertFileContentToBlob(String filePath){
 
-            if(filePath == null) return  null;
+            if(filePath == null) return null;
 
 
             File fi = new File(filePath);
@@ -91,7 +91,7 @@ import java.sql.*;
                     result = bis.read();
                 }
 
-                 filepath = currentPath + "/app/src/main/java/com/example/imgs/" + filename + ".jpeg";
+                 filepath = currentPath + "/app/src/main/java/com/example/imgs/" + filename + ".jpg";
 
                 File file = new File(filepath.trim());
                 FileOutputStream outputStream = new FileOutputStream(file);

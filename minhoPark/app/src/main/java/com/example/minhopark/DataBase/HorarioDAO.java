@@ -82,7 +82,7 @@ public class HorarioDAO {
     }
 
     public boolean removeHorario(int id) {
-        String sql = "DELETE FROM Horarios WHERE idHorario=?";
+        String sql = "DELETE FROM Horarios WHERE Parques_idParque=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
