@@ -1,4 +1,4 @@
-package com.example.minhopark.model;
+package com.example.minhopark.model.SSParques;
 
 
 import java.io.Serializable;
@@ -13,9 +13,9 @@ public class Parque implements Serializable {
     String coordenadas;
     int numCriticas;
     int rating;
-    List<Horario> horarios;
+    List<Horario> horarios; // TODO os gajos no diagrama de classes meteram uma lista de 7 dias na altura saraiva ficou na duvida como eles sabiam o dia do horario
     List<Categoria> categorias;
-
+    EstadoOperacional estadoOp;
 
     public Parque(int parqueID, String nome, String image, String endereco, String coordenadas, int numCriticas, int rating, List<Horario> horarios, List<Categoria> categorias) {
         this.parqueID = parqueID;

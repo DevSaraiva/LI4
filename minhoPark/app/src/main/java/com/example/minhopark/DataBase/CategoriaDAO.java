@@ -1,12 +1,10 @@
 package com.example.minhopark.DataBase;
 
 
-import com.example.minhopark.model.Categoria;
+import com.example.minhopark.model.SSParques.Categoria;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class CategoriaDAO {
@@ -87,6 +85,7 @@ public class CategoriaDAO {
         CategoriaDAO dao = new CategoriaDAO();
 
 
+        /*
         Categoria c1 = new Categoria("Parque_De_Lazer", null);
         Categoria c2 = new Categoria("Parque_Urbano" , null);
         Categoria c3 = new Categoria("Parque_Infatil", null);
@@ -112,6 +111,8 @@ public class CategoriaDAO {
         dao.addCategoria(c10);
         dao.addCategoria(c11);
         dao.addCategoria(c12);
+
+         */
 
         Categoria res = dao.getCategoria("Parque_De_Lazer");
 

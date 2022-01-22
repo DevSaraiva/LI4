@@ -1,10 +1,9 @@
 package com.example.minhopark.DataBase;
 
 
-import com.example.minhopark.model.Categoria;
-import com.example.minhopark.model.Horario;
-import com.example.minhopark.model.Parque;
-import com.example.minhopark.model.Preferences;
+import com.example.minhopark.model.SSParques.Categoria;
+import com.example.minhopark.model.SSParques.Horario;
+import com.example.minhopark.model.SSParques.Parque;
 
 import java.io.File;
 import java.io.InputStream;
@@ -39,9 +38,8 @@ public class ParqueDAO {
             List<Categoria> categorias = new ArrayList<>();
 
             while (rs.next()) {
-                String id = rs.getString(1);
-                Blob imagem = rs.getBlob(2);
-                Categoria categoria = new Categoria(id, null);
+                String id = rs.getString(2);
+                Categoria categoria = categoriaDAO.getCategoria(id);
                 categorias.add(categoria);
             }
 
@@ -154,7 +152,24 @@ public class ParqueDAO {
         }
     }
 
+    public boolean removeParqueHasCategoria(int id){
+        String sql ="DELETE FROM Parques_has_Categorias WHERE Parques_idParque=?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1,id);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
     public boolean removeParque(int id){
+
+        removeParqueHasCategoria(id);
+
         String sql ="DELETE FROM Parques WHERE idParque=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);

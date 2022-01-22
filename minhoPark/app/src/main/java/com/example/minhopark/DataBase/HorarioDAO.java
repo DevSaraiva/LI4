@@ -3,7 +3,7 @@ package com.example.minhopark.DataBase;
 
 
 
-import com.example.minhopark.model.Horario;
+import com.example.minhopark.model.SSParques.Horario;
 
 import java.sql.*;
 import java.time.LocalTime;

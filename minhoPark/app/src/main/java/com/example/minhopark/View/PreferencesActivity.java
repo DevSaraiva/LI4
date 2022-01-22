@@ -13,11 +13,11 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.MinhoPark.R;
-import com.example.minhopark.model.Preferences;
+import com.example.minhopark.model.SSUtilizadores.Preferencia;
 
 
 public class PreferencesActivity extends AppCompatActivity {
-    Preferences p = new Preferences();
+    Preferencia p = new Preferencia();
     RadioButton radioButtonLoc;
     RadioButton radioButtonNParques;
     RadioButton radioButtonPortagens;
