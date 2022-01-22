@@ -2,6 +2,8 @@ package com.example.minhopark.View;
 
 import android.widget.Switch;
 
+import com.example.minhopark.model.Categoria;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -14,7 +16,7 @@ public class Preferences {
     private Set<String> tiposParques;
 
     public Preferences () {
-        this.loc = "locDispositivo";
+        this.loc = "LocDispositivo";
         this.nParques = 10;
         this.evitarPortagens = false;
         this.tiposParques = new TreeSet<>();
