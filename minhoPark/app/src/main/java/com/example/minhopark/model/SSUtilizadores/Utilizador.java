@@ -86,7 +86,7 @@ public class Utilizador {
 
         try {
 
-            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/favoritos";
+            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/preferencias";
 
             File file = new File(path.trim());
 
@@ -112,7 +112,7 @@ public class Utilizador {
 
         try {
 
-            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/preferences";
+            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/preferencias";
 
             File toRead = new File(path.trim());
             if(!toRead.exists()) return false;
@@ -180,7 +180,12 @@ public class Utilizador {
     }
 
 
+public static void main(String[] args){
+        Utilizador u = new Utilizador(null);
+        u.savePreferences();
+        u.saveFavoritos();
 
+}
 
 
 

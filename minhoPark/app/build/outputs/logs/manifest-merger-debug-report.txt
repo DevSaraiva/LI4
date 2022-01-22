@@ -7,6 +7,7 @@ INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/Androi
 MERGED from [com.google.android.material:material:1.5.0] /home/saraiva/.gradle/caches/transforms-3/e6a6b98a5bf4cf452a4bc3a3002b3bc1/transformed/material-1.5.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/saraiva/.gradle/caches/transforms-3/1f79276959ca9fb7f15de4c6158306e1/transformed/constraintlayout-2.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/saraiva/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/47b019b3afdeb432a63ac8a1382f36b9/transformed/jetified-ui-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/3504aa656f9d00f9e2cadffb281d01d0/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /home/saraiva/.gradle/caches/transforms-3/3fa0452599eafa04f96460f5edb0e212/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.2.4] /home/saraiva/.gradle/caches/transforms-3/979d22e60a188fda7431e38d4f6f14e6/transformed/jetified-activity-1.2.4/AndroidManifest.xml:17:1-24:12
@@ -19,6 +20,8 @@ MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/saraiva/.gr
 MERGED from [androidx.transition:transition:1.2.0] /home/saraiva/.gradle/caches/transforms-3/82e137d0499d09a449d2463aa5974f15/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/saraiva/.gradle/caches/transforms-3/bad80395f89f9c8d7e39c1b2b41b5525/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/saraiva/.gradle/caches/transforms-3/ec79f9c58b64c498772908f9ba77a8d1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-text:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/651f60d3df6a8c7b33324a3b1933ecce/transformed/jetified-ui-text-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/saraiva/.gradle/caches/transforms-3/559d71888608aa8064435d133930e4ce/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/saraiva/.gradle/caches/transforms-3/70815d79092ecd9fc6461dffc8a2c5cb/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/saraiva/.gradle/caches/transforms-3/653456c4a641da75de4b4a9638a8683c/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/saraiva/.gradle/caches/transforms-3/26a7debbd02593a460c2da8b73b1a684/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -30,6 +33,12 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/sara
 MERGED from [androidx.savedstate:savedstate:1.1.0] /home/saraiva/.gradle/caches/transforms-3/2a57aba640d6987b70d76bbd37348ac4/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/saraiva/.gradle/caches/transforms-3/dabda3dcb43df8ec4c551ac08ba381df/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/saraiva/.gradle/caches/transforms-3/a2242387247aa8432093d2a01af71dba/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.animation:animation-core:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/b6ce9218b81211d66a121e2e4369b34e/transformed/jetified-animation-core-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/8b8e4980746a68884f25cda3350e7c60/transformed/jetified-runtime-saveable-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-graphics:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/5fa2a0f1327e2a278b94c72abdd1abb0/transformed/jetified-ui-graphics-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-unit:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/eecf4012fe8f4d6100c78cc5b981cd2d/transformed/jetified-ui-unit-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-geometry:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/0ca6f2e5723dfc950f9786db8821782a/transformed/jetified-ui-geometry-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/b6dffe33a86edb71046d088ae25098fd/transformed/jetified-runtime-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/saraiva/.gradle/caches/transforms-3/8a9cae927f9316cf7d269ce5dd3eaa14/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.startup:startup-runtime:1.0.0] /home/saraiva/.gradle/caches/transforms-3/46500c3b5c1ccf84767a89139e7d74da/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
@@ -43,6 +52,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/saraiva/.gradle/cac
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/saraiva/.gradle/caches/transforms-3/30559646bdc9f3290097ba378eb99203/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/saraiva/.gradle/caches/transforms-3/b618f929228947d1fd03b4a852d85b00/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/saraiva/.gradle/caches/transforms-3/b521f32a8ca2115704fce9eaa65230c1/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-util:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/cb2129325f00748b28101b7122f1aa6d/transformed/jetified-ui-util-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:2:1-44:12
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:2:1-44:12
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:2:1-44:12
@@ -132,6 +142,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/saraiva/.gr
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/saraiva/.gradle/caches/transforms-3/1f79276959ca9fb7f15de4c6158306e1/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/saraiva/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/saraiva/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/47b019b3afdeb432a63ac8a1382f36b9/transformed/jetified-ui-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/47b019b3afdeb432a63ac8a1382f36b9/transformed/jetified-ui-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/3504aa656f9d00f9e2cadffb281d01d0/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/saraiva/.gradle/caches/transforms-3/3504aa656f9d00f9e2cadffb281d01d0/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /home/saraiva/.gradle/caches/transforms-3/3fa0452599eafa04f96460f5edb0e212/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
@@ -156,6 +168,10 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/saraiv
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/saraiva/.gradle/caches/transforms-3/bad80395f89f9c8d7e39c1b2b41b5525/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/saraiva/.gradle/caches/transforms-3/ec79f9c58b64c498772908f9ba77a8d1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/saraiva/.gradle/caches/transforms-3/ec79f9c58b64c498772908f9ba77a8d1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-text:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/651f60d3df6a8c7b33324a3b1933ecce/transformed/jetified-ui-text-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-text:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/651f60d3df6a8c7b33324a3b1933ecce/transformed/jetified-ui-text-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/saraiva/.gradle/caches/transforms-3/559d71888608aa8064435d133930e4ce/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/saraiva/.gradle/caches/transforms-3/559d71888608aa8064435d133930e4ce/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/saraiva/.gradle/caches/transforms-3/70815d79092ecd9fc6461dffc8a2c5cb/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/saraiva/.gradle/caches/transforms-3/70815d79092ecd9fc6461dffc8a2c5cb/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/saraiva/.gradle/caches/transforms-3/653456c4a641da75de4b4a9638a8683c/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
@@ -178,6 +194,18 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/saraiva/.gradle
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/saraiva/.gradle/caches/transforms-3/dabda3dcb43df8ec4c551ac08ba381df/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] /home/saraiva/.gradle/caches/transforms-3/a2242387247aa8432093d2a01af71dba/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /home/saraiva/.gradle/caches/transforms-3/a2242387247aa8432093d2a01af71dba/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-core:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/b6ce9218b81211d66a121e2e4369b34e/transformed/jetified-animation-core-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/b6ce9218b81211d66a121e2e4369b34e/transformed/jetified-animation-core-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/8b8e4980746a68884f25cda3350e7c60/transformed/jetified-runtime-saveable-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/8b8e4980746a68884f25cda3350e7c60/transformed/jetified-runtime-saveable-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-graphics:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/5fa2a0f1327e2a278b94c72abdd1abb0/transformed/jetified-ui-graphics-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-graphics:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/5fa2a0f1327e2a278b94c72abdd1abb0/transformed/jetified-ui-graphics-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-unit:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/eecf4012fe8f4d6100c78cc5b981cd2d/transformed/jetified-ui-unit-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-unit:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/eecf4012fe8f4d6100c78cc5b981cd2d/transformed/jetified-ui-unit-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-geometry:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/0ca6f2e5723dfc950f9786db8821782a/transformed/jetified-ui-geometry-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-geometry:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/0ca6f2e5723dfc950f9786db8821782a/transformed/jetified-ui-geometry-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/b6dffe33a86edb71046d088ae25098fd/transformed/jetified-runtime-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/b6dffe33a86edb71046d088ae25098fd/transformed/jetified-runtime-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/saraiva/.gradle/caches/transforms-3/8a9cae927f9316cf7d269ce5dd3eaa14/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/saraiva/.gradle/caches/transforms-3/8a9cae927f9316cf7d269ce5dd3eaa14/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/saraiva/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:21:5-23:41
@@ -204,6 +232,8 @@ MERGED from [androidx.print:print:1.0.0] /home/saraiva/.gradle/caches/transforms
 MERGED from [androidx.print:print:1.0.0] /home/saraiva/.gradle/caches/transforms-3/b618f929228947d1fd03b4a852d85b00/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/saraiva/.gradle/caches/transforms-3/b521f32a8ca2115704fce9eaa65230c1/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/saraiva/.gradle/caches/transforms-3/b521f32a8ca2115704fce9eaa65230c1/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-util:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/cb2129325f00748b28101b7122f1aa6d/transformed/jetified-ui-util-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-util:1.0.0-beta04] /home/saraiva/.gradle/caches/transforms-3/cb2129325f00748b28101b7122f1aa6d/transformed/jetified-ui-util-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml
 INJECTED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

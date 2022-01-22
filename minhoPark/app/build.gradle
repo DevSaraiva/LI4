@@ -47,6 +47,7 @@ dependencies {
     implementation files('/Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/java/com/example/libs/mysql-connector-java-8.0.28')
     implementation files('/Users/ruimoreira/Desktop/LI4/minhoPark/mysql-connector-java-8.0.28')
     implementation files('/Users/ruimoreira/Desktop/LI4/minhoPark')
+    implementation 'androidx.compose.ui:ui:1.0.0-beta04'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

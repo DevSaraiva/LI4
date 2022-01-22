@@ -185,7 +185,7 @@ public class ParqueDAO {
         }
     }
 
-    public List<Parque> getParques(String idCategoria){
+    public List<Parque> getParquesFiltered(String idCategoria){
         List<Parque> parques = new ArrayList<>();
         String sql = "SELECT * FROM Parques_has_Categorias WHERE Categorias_idCategoria=?";
         try {
@@ -206,8 +206,43 @@ public class ParqueDAO {
     }
 
 
+    public List<Parque> getParques(){
+        List<Parque> parques = new ArrayList<>();
+        String sql = "SELECT * FROM Parques WHERE idParque=?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                int id = rs.getInt(1);
+                String nome = rs.getString(2);
+                Blob imagem = rs.getBlob(3);
+                String filename = "parque" + id;
+                String filePath = ConnectDB.convertToFile(imagem, filename);
+                String endereco = rs.getString(4);
+                String coordenadas = rs.getString(5);
+                int nrCriticas = rs.getInt(6);
+                float rating = rs.getFloat(7);
+
+                List<Categoria> categorias = this.getCategorias(id);
+                List<Horario> horarios = this.horarioDAO.getHorarios(id);
+
+                Parque parque = new Parque(id,nome,filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
+
+                parques.add(parque);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return parques;
+    }
+
 
     public static void main(String args[]){
+
+
         ParqueDAO dao = new ParqueDAO();
 
 
@@ -306,9 +341,6 @@ public class ParqueDAO {
         dao.addParque(p24);
         dao.addParque(p25);
 
-
-
-        System.out.println(dao.getParques("Parque_De_Lazer"));
 
     }
 

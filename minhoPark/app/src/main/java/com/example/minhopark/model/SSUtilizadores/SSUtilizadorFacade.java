@@ -28,5 +28,10 @@ public class SSUtilizadorFacade implements IUtilizadores {
         utilizador.removeFavotito(id);
     }
 
+    @Override
+    public String getCoordenadas() {
+        return utilizador.getCoordenadas();
+    }
+
 
 }
