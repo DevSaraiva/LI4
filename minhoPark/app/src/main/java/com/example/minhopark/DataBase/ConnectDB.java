@@ -50,8 +50,6 @@ import java.sql.*;
 
                 fileContent = Files.readAllBytes(fi.toPath());
 
-                System.out.println(fileContent.length);
-
                 blob = new SerialBlob(fileContent);
 
             }catch (Exception e){
