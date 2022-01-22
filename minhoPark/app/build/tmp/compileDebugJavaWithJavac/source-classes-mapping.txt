@@ -29,8 +29,6 @@ com/example/minhopark/model/SSParques/IParques.java
 com/example/minhopark/View/FavouritesActivity.java
  com.example.minhopark.View.FavouritesActivity
  com.example.minhopark.View.FavouritesActivity$1
-com/example/MinhoPark/databinding/ActivityMapsBinding.java
- com.example.MinhoPark.databinding.ActivityMapsBinding
 com/example/minhopark/model/SSUtilizadores/IUtilizadores.java
  com.example.minhopark.model.SSUtilizadores.IUtilizadores
 com/example/minhopark/model/SSParques/EstadoOperacional.java

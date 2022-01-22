@@ -48,10 +48,6 @@
         "source": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/build/intermediates/merged_res/debug/layout_activity_maps.xml.flat",
-        "source": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/src/main/res/layout/activity_maps.xml"
-    },
-    {
         "merged": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/build/intermediates/merged_res/debug/layout_activity_favourites.xml.flat",
         "source": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/src/main/res/layout/activity_favourites.xml"
     },

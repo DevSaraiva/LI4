@@ -3,12 +3,13 @@ package com.example.minhopark.model.SSParques;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
 
 import java.util.List;
+import java.util.Set;
 
 public interface IParques {
 
     Parque getParque(int id);
     public void addParque(Parque p);
-    List<Parque> pesquisa(Preferencia p);
+    Set<Parque> pesquisa(Preferencia p);
 
 }
 

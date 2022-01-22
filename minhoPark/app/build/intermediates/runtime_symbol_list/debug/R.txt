@@ -3182,7 +3182,6 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_favourites 0x7f0b001c
 int layout activity_main 0x7f0b001d
-int layout activity_maps 0x7f0b001e
 int layout activity_maps2 0x7f0b001f
 int layout activity_preferences_activity 0x7f0b0020
 int layout custom_dialog 0x7f0b0021

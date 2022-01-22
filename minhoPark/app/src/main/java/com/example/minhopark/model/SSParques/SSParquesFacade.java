@@ -6,6 +6,8 @@ import com.example.minhopark.DataBase.ParqueDAO;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
 
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class SSParquesFacade implements IParques {
 
@@ -34,8 +36,20 @@ public class SSParquesFacade implements IParques {
     }
 
     @Override
-    public List<Parque> pesquisa(Preferencia p) {
-        return null;
+    public Set<Parque> pesquisa(Preferencia p) {
+
+        Set<Parque> res = new TreeSet<>();
+
+
+        for(String id : p.getTiposParques()){
+            for(Parque parque : this.parques.getParques(id)){
+                res.add(parque);
+            }
+        }
+
+
+        return res;
+
     }
 
 
