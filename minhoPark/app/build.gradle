@@ -15,10 +15,6 @@ android {
         exclude 'META-INF/ASL2.0'
         exclude 'META-INF/INDEX.LIST'
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 
     defaultConfig {
         applicationId "com.example.minhopark"
