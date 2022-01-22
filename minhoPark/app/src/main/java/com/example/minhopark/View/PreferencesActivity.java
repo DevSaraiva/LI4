@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 
 import com.example.MinhoPark.R;
+import com.example.minhopark.model.Preferences;
 
 
 public class PreferencesActivity extends AppCompatActivity {

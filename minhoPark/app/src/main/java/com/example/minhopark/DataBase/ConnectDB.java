@@ -38,6 +38,9 @@ import java.sql.*;
 
         public static Blob convertFileContentToBlob(String filePath){
 
+            if(filePath == null) return  null;
+
+
             File fi = new File(filePath);
 
             Blob blob = null;
@@ -62,6 +65,8 @@ import java.sql.*;
 
 
         public static String convertToFile(Blob blob, String filename) {
+
+            if(blob == null) return null;
 
             String filepath = null;
 

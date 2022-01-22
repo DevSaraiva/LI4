@@ -1,9 +1,5 @@
-package com.example.minhopark.View;
+package com.example.minhopark.model;
 
-import android.widget.Switch;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 

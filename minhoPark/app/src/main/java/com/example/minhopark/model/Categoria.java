@@ -3,26 +3,29 @@ package com.example.minhopark.model;
 
 public class Categoria {
 
-    int idCategoria;
+    String nome;
     String iconePath;
-    String descricao;
 
 
-    public Categoria(int idCategoria, String iconePath, String descricao) {
-        this.idCategoria = idCategoria;
+    public Categoria(String nome, String iconePath) {
+        this.nome = nome;
         this.iconePath = iconePath;
-        this.descricao = descricao;
-
     }
-
 
     @Override
     public String toString() {
         return "Categoria{" +
-                "idCategoria=" + idCategoria +
+                "idCategoria=" + nome +
                 ", iconePath='" + iconePath + '\'' +
-                ", descricao='" + descricao + '\'' +
                 '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getIconePath() {
@@ -32,26 +35,4 @@ public class Categoria {
     public void setIconePath(String iconePath) {
         this.iconePath = iconePath;
     }
-
-    public void setDescrição(String descrição) {
-        this.descricao = descricao;
-    }
-
-
-    public int getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
 }

@@ -4,6 +4,7 @@ package com.example.minhopark.DataBase;
 import com.example.minhopark.model.Categoria;
 import com.example.minhopark.model.Horario;
 import com.example.minhopark.model.Parque;
+import com.example.minhopark.model.Preferences;
 
 import java.io.File;
 import java.io.InputStream;
@@ -18,14 +19,42 @@ public class ParqueDAO {
     private HorarioDAO horarioDAO;
 
     public ParqueDAO() {
-        try{
-            this.connection = ConnectDB .getConnection();
+        try {
+            this.connection = ConnectDB.getConnection();
             this.categoriaDAO = new CategoriaDAO();
             this.horarioDAO = new HorarioDAO();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+    public List<Categoria> getCategorias(int parqueID) {
+
+        try {
+            String sql = "SELECT * FROM Parques_has_categorias WHERE iDParque=?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, parqueID);
+            ResultSet rs = stmt.executeQuery();
+            List<Categoria> categorias = new ArrayList<>();
+
+            while (rs.next()) {
+                String id = rs.getString(1);
+                Blob imagem = rs.getBlob(2);
+                Categoria categoria = new Categoria(id, null);
+                categorias.add(categoria);
+            }
+
+            return categorias;
+
+        } catch(SQLException e){
+
+            e.printStackTrace();
+        }
+            return null;
+    }
+
+
 
     public Parque getParque(int parqueID) {
         String sql = "SELECT * FROM Parques WHERE iDParque=?";
@@ -44,7 +73,7 @@ public class ParqueDAO {
                 int nrCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
 
-                List<Categoria> categorias = this.categoriaDAO.getCategorias(parqueID);
+                List<Categoria> categorias = this.getCategorias(parqueID);
                 List<Horario> horarios = this.horarioDAO.getHorarios(parqueID);
 
                 return new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
@@ -108,12 +137,14 @@ public class ParqueDAO {
         }
     }
 
-    public List<Parque> getParques(){
+    public List<Parque> getParques(String idCategoria){
         List<Parque> parques = new ArrayList<>();
-        String sql = "SELECT * FROM Parques";
+        String sql = "SELECT * FROM Parques_has_Categories WHERE Categorias_idCategoria=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1,idCategoria);
             ResultSet rs = stmt.executeQuery();
+
             while (rs.next()) {
                 int id = rs.getInt(1);
                 String nome = rs.getString(2);
@@ -125,7 +156,7 @@ public class ParqueDAO {
                 int nrCriticas = rs.getInt(6);
                 int rating = rs.getInt(7);
 
-                List<Categoria> categorias = this.categoriaDAO.getCategorias(id);
+                List<Categoria> categorias = this.getCategorias(id);
                 List<Horario> horarios = this.horarioDAO.getHorarios(id);
 
                 Parque parque = new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
@@ -136,6 +167,8 @@ public class ParqueDAO {
         }
         return parques;
     }
+
+
 
     public static void main(String args[]){
         ParqueDAO dao = new ParqueDAO();

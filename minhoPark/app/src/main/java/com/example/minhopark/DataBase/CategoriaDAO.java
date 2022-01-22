@@ -20,19 +20,17 @@ public class CategoriaDAO {
         }
     }
 
-    public Categoria getCategoria(int idCategoria) {
+    public Categoria getCategoria(String idCategoria) {
         String sql = "SELECT * FROM Categorias WHERE idCategoria=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, idCategoria);
+            stmt.setString(1, idCategoria);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-
-                Blob image = rs.getBlob(3);
+                Blob image = rs.getBlob(2);
                 String path = ConnectDB.convertToFile(image,"categoria" + idCategoria);
-                String descricao = rs.getString(4);
 
-                return new Categoria(idCategoria, null,descricao);
+                return new Categoria(idCategoria, null);
 
             }
             connection.close();
@@ -42,14 +40,12 @@ public class CategoriaDAO {
         return null;
     }
 
-    public boolean addCategoria(int idParque,Categoria categoria){
-        String sql = "INSERT INTO Categorias(idCategoria,Parques_idParque,Icone,Descricao) VALUES(?,?,?,?)";
+    public boolean addCategoria(Categoria categoria){
+        String sql = "INSERT INTO Categorias(idCategoria,Icone) VALUES(?,?)";
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, categoria.getIdCategoria());
-            stmt.setInt(2, idParque);
-            stmt.setBlob(3, ConnectDB.convertFileContentToBlob(categoria.getIconePath()));
-            stmt.setString(4,categoria.getDescricao());
+            stmt.setString(1, categoria.getNome());
+            stmt.setBlob(2, ConnectDB.convertFileContentToBlob(categoria.getIconePath()));
             stmt.execute();
             return true;
         } catch (SQLException e) {
@@ -58,14 +54,12 @@ public class CategoriaDAO {
         }
     }
 
-    public boolean setCategoria(int idParque,Categoria categoria){
-        String sql = "UPDATE Categorias Parques_idParque=?, Icone=?, Descricao=? WHERE idCategoria=?";
+    public boolean setCategoria(Categoria categoria){
+        String sql = "UPDATE Categorias Icone=? WHERE idCategoria=?";
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1,categoria.getIdCategoria());
-            stmt.setInt(2,idParque);
-            stmt.setBlob(3, (InputStream) null);
-            stmt.setString(4, categoria.getDescricao());
+            stmt.setString(1,categoria.getNome());
+            stmt.setBlob(2, (InputStream) null);
             stmt.execute();
             return true;
         } catch (SQLException e) {
@@ -87,34 +81,44 @@ public class CategoriaDAO {
         }
     }
 
-    public List<Categoria> getCategorias(int idParque) {
-        List<Categoria> categorias = new ArrayList<>();
-        String sql = "SELECT * FROM Categorias WHERE Parques_idParque=?";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, idParque);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
 
-                int idCategoria = rs.getInt(1);
-                Blob image = rs.getBlob(3);
-                String imagePath = ConnectDB.convertToFile(image,"categoria" + idCategoria);
-                String descricao = rs.getString(4);
-
-
-                Categoria categoria = new Categoria(idCategoria, imagePath, descricao);
-                categorias.add(categoria);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return categorias;
-    }
 
     public static void main(String args[]){
         CategoriaDAO dao = new CategoriaDAO();
 
-        Categoria categoria = dao.getCategoria(1);
+
+        Categoria c1 = new Categoria("Parque_De_Lazer", null);
+        Categoria c2 = new Categoria("Parque_Urbano" , null);
+        Categoria c3 = new Categoria("Parque_Infatil", null);
+        Categoria c4 = new Categoria("Parque_Campismo", null);
+        Categoria c5 = new Categoria("Parque_Diversoes", null);
+        Categoria c6 = new Categoria("Parque_Patinagem", null);
+        Categoria c7 = new Categoria("Parque_Ecologico", null);
+        Categoria c8 = new Categoria("Parque_Cidade", null);
+        Categoria c9 = new Categoria("Parque_Estatal", null);
+        Categoria c10 = new Categoria("Parque_Nacional", null);
+        Categoria c11 = new Categoria("Jardim", null);
+        Categoria c12 = new Categoria("Reserva_Natural", null);
+
+
+        dao.addCategoria(c1);
+        dao.addCategoria(c2);
+        dao.addCategoria(c3);
+        dao.addCategoria(c4);
+        dao.addCategoria(c5);
+        dao.addCategoria(c6);
+        dao.addCategoria(c7);
+        dao.addCategoria(c8);
+        dao.addCategoria(c9);
+        dao.addCategoria(c10);
+        dao.addCategoria(c11);
+        dao.addCategoria(c12);
+
+
+        Categoria res = dao.getCategoria("Parque_De_Lazer");
+
+        System.out.println(res);
+
 
     }
 
