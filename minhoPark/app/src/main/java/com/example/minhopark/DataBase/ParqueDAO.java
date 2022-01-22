@@ -1,11 +1,12 @@
 package com.example.minhopark.DataBase;
 
 
-
 import com.example.minhopark.model.Categoria;
 import com.example.minhopark.model.Horario;
 import com.example.minhopark.model.Parque;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class ParqueDAO {
     }
 
     public Parque getParque(int parqueID) {
-        String sql = "SELECT * FROM PARQUES WHERE iDParque=?";
+        String sql = "SELECT * FROM Parques WHERE iDParque=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, parqueID);
@@ -63,7 +64,7 @@ public class ParqueDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1,parque.getParqueID());
             stmt.setString(2,parque.getNome());
-            stmt.setBlob(3, (InputStream) null);
+            stmt.setBlob(3, ConnectDB.convertFileContentToBlob(parque.getImage()));
             stmt.setString(4, parque.getEndereco());
             stmt.setString(5,parque.getCoordenadas());
             stmt.setInt(6,parque.getNumCriticas());
@@ -140,11 +141,26 @@ public class ParqueDAO {
     public static void main(String args[]){
         ParqueDAO dao = new ParqueDAO();
 
-        //Parque p = new Parque(1,"Florestal",null,"rua matos","x:13,y:14,z:50",2,5,null,null);
+        String path = "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/java/com/example/imgs/teste.jpeg";
+        path.trim();
 
-        //dao.addParque(p);
+        File f = new File(path);
 
-        System.out.println(dao.getParques());
+        if(f.exists()){
+            System.out.println("ola");
+        }else{
+            System.out.println("adeus");
+        }
+
+        Parque p = new Parque(1,"Florestal",path,"rua matos","x:13,y:14,z:50",2,5,null,null);
+
+
+
+
+        dao.removeParque(1);
+        dao.addParque(p);
+        dao.getParque(1);
+
     }
 
 }

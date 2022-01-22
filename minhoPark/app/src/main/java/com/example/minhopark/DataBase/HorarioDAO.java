@@ -51,8 +51,10 @@ public class HorarioDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, horario.getIdHorario());
             stmt.setInt(2, idParque);
-            stmt.setTime(3, Time.valueOf(horario.getAbertura().toString()));
-            stmt.setTime(4, Time.valueOf(horario.getEncerramento().toString()));
+            String abertura = horario.getAbertura().getHour()+":"+horario.getAbertura().getMinute()+":"+horario.getAbertura().getSecond();
+            String fecho = horario.getEncerramento().getHour()+":"+horario.getEncerramento().getMinute()+":"+horario.getEncerramento().getSecond();
+            stmt.setTime(3, Time.valueOf(abertura));
+            stmt.setTime(4, Time.valueOf(fecho));
             stmt.setString(5, horario.getDia());
             stmt.execute();
             return true;
@@ -121,8 +123,9 @@ public class HorarioDAO {
     public static void main(String args[]){
         HorarioDAO dao = new HorarioDAO();
 
-            Horario h = new Horario(1,LocalTime.of(8,0), LocalTime.of(19,20), "segunda");
+        Horario h = new Horario(1,LocalTime.of(8,0,0), LocalTime.of(19,20,0), "segunda");
 
+        dao.addHorario(1,h);
 
         System.out.println(dao.getHorarios(1));
 

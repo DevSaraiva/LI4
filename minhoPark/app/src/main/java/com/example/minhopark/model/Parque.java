@@ -69,6 +69,9 @@ public class Parque {
         return categorias;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public void setParqueID(int parqueID) {
         this.parqueID = parqueID;

@@ -1,6 +1,7 @@
 package com.example.minhopark.DataBase;
 
 import android.os.Build;
+import android.provider.ContactsContract;
 
 import javax.sql.rowset.serial.SerialBlob;
 import java.io.*;
@@ -48,9 +49,11 @@ import java.sql.*;
 
             try{
                 byte[] fileContent = new byte[0];
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    fileContent = Files.readAllBytes(fi.toPath());
-                }
+
+                fileContent = Files.readAllBytes(fi.toPath());
+
+                System.out.println(fileContent.length);
+
                 blob = new SerialBlob(fileContent);
 
             }catch (Exception e){
@@ -69,6 +72,13 @@ import java.sql.*;
 
             try {
 
+                String currentPath = null;
+                try {
+                    currentPath = new File(".").getCanonicalPath();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 InputStream is = blob.getBinaryStream();
 
                 BufferedInputStream bis = new BufferedInputStream(is);
@@ -83,9 +93,9 @@ import java.sql.*;
                     result = bis.read();
                 }
 
-                 filepath = "./imgs/" + filename + ".jpeg";
+                 filepath = currentPath + "/app/src/main/java/com/example/imgs/" + filename + ".jpeg";
 
-                File file = new File(filepath);
+                File file = new File(filepath.trim());
                 FileOutputStream outputStream = new FileOutputStream(file);
                 outputStream.write(buf.toByteArray());
                 outputStream.close();
