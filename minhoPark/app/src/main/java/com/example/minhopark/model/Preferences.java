@@ -1,14 +1,5 @@
 package com.example.minhopark.model;
 
-<<<<<<< HEAD:minhoPark/app/src/main/java/com/example/minhopark/model/Preferences.java
-=======
-import android.widget.Switch;
-
-import com.example.minhopark.model.Categoria;
-
-import java.util.ArrayList;
-import java.util.List;
->>>>>>> 98030805e54c32c1264bbfe3d0e665354dae1b41:minhoPark/app/src/main/java/com/example/minhopark/View/Preferences.java
 import java.util.Set;
 import java.util.TreeSet;
 
