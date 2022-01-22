@@ -203,7 +203,7 @@ public class ParqueDAO {
             System.out.println("adeus");
         }
 
-<<<<<<< HEAD
+
         // Parque px = new Parque(ID Parque, Nome Parque, Path para a pasta onde está a imagem, Endereço, Coordenadas, NCriticas, Rating, Horarios, Categorias)
         Parque p0 = new Parque(0,"Parque da Ponte","/app/src/main/java/com/example/imgs/p0.jpg", "rua matos","41.5416871,-8.418896199999999",4296,4.4,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Parque Urbano" & "Parque da Cidade" & "Parque Infantil");
         Parque p1 = new Parque(1,"Jardim da Avenida Central","/app/src/main/java/com/example/imgs/p1.jpg","Av. Central 116, 4710-249 Braga, Portugal","41.551536,-8.4216509",4670,4.6,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Jardim" & "Parque Infantil" );
@@ -234,9 +234,6 @@ public class ParqueDAO {
         Parque p25 = new Parque(25,"Parque da Cidade de Viana","/app/src/main/java/com/example/imgs/p24.jpg", "Viana do Castelo, Ponte de Lima, Portugal","41.6968733997282, -8.818275501874414",232,4.3,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Parque Urbano" & "Parque Cidade" & "Parque Ecológico");
         Parque p26 = new Parque(26,"Parque Nacional Peneda-Gerês","/app/src/main/java/com/example/imgs/p25.jpg", "Terras de Bouro, Braga, Portugal","41.79636333932538, -8.15010720575464",114,4.6,LocalTime.of(00,00,00) & LocalTime.of(23,59,59),"Parque Nacional" & "Reserva Natural");
 
-=======
->>>>>>> 1544ec38e21b9cf0fc94535016bf65758456e4b3
-
         List<Categoria> categorias = new ArrayList<>();
         List<Horario> horarios = new ArrayList<>();
         Categoria categoria = new Categoria("Parque_De_Lazer",null);
@@ -244,8 +241,36 @@ public class ParqueDAO {
 
         Parque p = new Parque(1,"Florestal",path,"rua matos","x:13,y:14,z:50",2,5,horarios,categorias);
 
-        dao.removeParque(1);
-        dao.addParque(p);
+        //dao.removeParque(1);
+        //dao.addParque(p);
+        dao.addParque(p0);
+        dao.addParque(p1);
+        dao.addParque(p2);
+        dao.addParque(p3);
+        dao.addParque(p4);
+        dao.addParque(p5);
+        dao.addParque(p6);
+        dao.addParque(p7);
+        dao.addParque(p8);
+        dao.addParque(p9);
+        dao.addParque(p10);
+        dao.addParque(p11);
+        dao.addParque(p12);
+        dao.addParque(p13);
+        dao.addParque(p14);
+        dao.addParque(p15);
+        dao.addParque(p16);
+        dao.addParque(p17);
+        dao.addParque(p18);
+        dao.addParque(p19);
+        dao.addParque(p20);
+        dao.addParque(p21);
+        dao.addParque(p22);
+        dao.addParque(p23);
+        dao.addParque(p24);
+        dao.addParque(p25);
+        dao.addParque(p26);
+
         System.out.println(dao.getParques("Parque_De_Lazer"));
 
     }
