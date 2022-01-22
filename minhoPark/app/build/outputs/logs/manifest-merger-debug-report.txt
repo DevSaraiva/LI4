@@ -93,13 +93,23 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/ruimoreira/.gradle/c
 	android:allowBackup
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:7:9-35
 	android:theme
+<<<<<<< HEAD
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:12:9-51
 activity#com.example.minhopark.View.FavouritesActivity
 ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:13:9-21:20
+=======
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:12:9-51
+activity#com.example.minhopark.View.FavouritesActivity
+ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:13:9-21:20
+>>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 	android:exported
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:15:13-36
 	android:name
+<<<<<<< HEAD
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:14:13-73
+=======
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:14:13-73
+>>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
@@ -109,19 +119,35 @@ ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.
 category#android.intent.category.LAUNCHER
 ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
+<<<<<<< HEAD
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
 activity#com.example.minhopark.View.PreferencesActivity
 ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:22:9-30:20
+=======
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:19:27-74
+activity#com.example.minhopark.View.PreferencesActivity
+ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:22:9-30:20
+>>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 	android:exported
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:24:13-36
 	android:name
+<<<<<<< HEAD
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:23:13-74
 activity#com.example.minhopark.View.MainActivity
 ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:33:9-41:20
+=======
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:23:13-74
+activity#com.example.minhopark.View.MainActivity
+ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:33:9-41:20
+>>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 	android:exported
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:35:13-36
 	android:name
+<<<<<<< HEAD
 		ADDED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml:34:13-67
+=======
+		ADDED from /home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/AndroidManifest.xml:34:13-67
+>>>>>>> 7b5751c96a14c85d6845fb7dd0130e0e6a994629
 uses-sdk
 INJECTED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/ruimoreira/Desktop/LI4/minhoPark/app/src/main/AndroidManifest.xml
