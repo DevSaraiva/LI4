@@ -1,0 +1,4 @@
+com/example/MinhoPark/test/BuildConfig.java
+ com.example.MinhoPark.test.BuildConfig
+com/example/minhopark/ExampleInstrumentedTest.java
+ com.example.minhopark.ExampleInstrumentedTest

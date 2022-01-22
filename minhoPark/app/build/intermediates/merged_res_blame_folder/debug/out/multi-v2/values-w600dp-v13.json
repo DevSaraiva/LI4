@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w600dp-v13/values-w600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/values-w600dp/dimens.xml",
+                    "from": {
+                        "startLines": "1,2,3",
+                        "startColumns": "1,4,4",
+                        "startOffsets": "13,71,113",
+                        "endColumns": "54,41,42",
+                        "endOffsets": "66,108,151"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,113,155",
+                        "endColumns": "57,41,42",
+                        "endOffsets": "108,150,193"
+                    }
+                }
+            ]
+        }
+    ]
+}

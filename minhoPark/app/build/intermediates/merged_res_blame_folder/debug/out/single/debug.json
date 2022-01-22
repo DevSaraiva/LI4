@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/drawable_menu.png.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/drawable/menu.png"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/drawable_preferencias.png.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/drawable/preferencias.png"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/layout_activity_preferences_activity.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/layout/activity_preferences_activity.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/layout_activity_maps.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/layout/activity_maps.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/layout_activity_favourites.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/layout/activity_favourites.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/menu_menu_scrolling.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/menu/menu_scrolling.xml"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/drawable_favoritos7.png.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/drawable/favoritos7.png"
+    },
+    {
+        "merged": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/drawable/ic_launcher_background.xml"
+    }
+]
