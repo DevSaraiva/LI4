@@ -1,7 +1,5 @@
 package com.example.minhopark.DataBase;
 
-import android.os.Build;
-import android.provider.ContactsContract;
 
 import javax.sql.rowset.serial.SerialBlob;
 import java.io.*;
