@@ -82,8 +82,14 @@ public class Utilizador {
 
     public void savePreferences(){
 
+
+
         try {
-            File file = new File("/app/src/main/java/com/example/saves/preferences");
+
+            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/favoritos";
+
+            File file = new File(path.trim());
+
 
             if (!file.exists()) {
                 file.createNewFile();
@@ -106,7 +112,9 @@ public class Utilizador {
 
         try {
 
-            File toRead = new File("/app/src/main/java/com/example/saves/preferences");
+            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/preferences";
+
+            File toRead = new File(path.trim());
             if(!toRead.exists()) return false;
 
             FileInputStream fis = new FileInputStream(toRead);
@@ -152,7 +160,10 @@ public class Utilizador {
 
     public void saveFavoritos(){
         try {
-            File file = new File("/app/src/main/java/com/example/saves/favoritos");
+
+            String path = new java.io.File(".").getCanonicalPath() +  "/app/src/main/java/com/example/saves/favoritos";
+
+            File file = new File(path.trim());
 
             if (!file.exists()) file.createNewFile();
             FileOutputStream fos = new FileOutputStream(file);
@@ -171,6 +182,9 @@ public class Utilizador {
 
 
     public static void main(String args[]){
+
+
+
 
         Utilizador u = new Utilizador("x:10,y:20");
 
