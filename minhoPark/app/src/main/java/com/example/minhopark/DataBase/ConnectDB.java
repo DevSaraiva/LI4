@@ -10,15 +10,12 @@ import java.sql.SQLException;
 
 
 
-
-
 import java.sql.*;
 
     public class ConnectDB {
         private Connection connection;
 
         public static Connection getConnection(){
-
 
 
             try {
