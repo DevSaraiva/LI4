@@ -1,9 +1,10 @@
 package com.example.minhopark.model;
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Preferences {
+public class Preferences implements Serializable {
     private String loc;
     private int nParques;
     private boolean evitarPortagens;

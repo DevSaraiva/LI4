@@ -1,9 +1,10 @@
 package com.example.minhopark.model;
 
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Parque {
+public class Parque implements Serializable {
 
     int parqueID;
     String nome;
