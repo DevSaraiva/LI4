@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/saraiva/Desktop/University/LI4/minhoPark/app/src/main/res/values-w1240dp/dimens.xml",
+                    "source": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/src/main/res/values-w1240dp/dimens.xml",
                     "from": {
                         "startLines": "1,2",
                         "startColumns": "1,4",

@@ -4,37 +4,49 @@ com/example/minhopark/View/MainActivity.java
  com.example.minhopark.View.MainActivity$2
 com/example/minhopark/DataBase/HorarioDAO.java
  com.example.minhopark.DataBase.HorarioDAO
+com/example/MinhoPark/databinding/ActivityPreferencesActivityBinding.java
+ com.example.MinhoPark.databinding.ActivityPreferencesActivityBinding
 com/example/MinhoPark/BuildConfig.java
  com.example.MinhoPark.BuildConfig
 com/example/minhopark/DataBase/ConnectDB.java
  com.example.minhopark.DataBase.ConnectDB
-com/example/minhopark/model/SSParques/Categoria.java
- com.example.minhopark.model.SSParques.Categoria
-com/example/minhopark/DataBase/CategoriaDAO.java
- com.example.minhopark.DataBase.CategoriaDAO
+com/example/minhopark/model/SSUtilizadores/Utilizador.java
+ com.example.minhopark.model.SSUtilizadores.Utilizador
+com/example/minhopark/model/SSParques/Parque.java
+ com.example.minhopark.model.SSParques.Parque
+com/example/MinhoPark/databinding/ActivityFavouritesBinding.java
+ com.example.MinhoPark.databinding.ActivityFavouritesBinding
+com/example/minhopark/View/MapsActivity.java
+ com.example.minhopark.View.MapsActivity
 com/example/minhopark/model/SSUtilizadores/Preferencia.java
  com.example.minhopark.model.SSUtilizadores.Preferencia
-com/example/minhopark/model/SSParques/Horario.java
- com.example.minhopark.model.SSParques.Horario
-com/example/minhopark/model/SSParques/EstadoOperacional.java
- com.example.minhopark.model.SSParques.EstadoOperacional
-com/example/minhopark/View/FavouritesActivity.java
- com.example.minhopark.View.FavouritesActivity
- com.example.minhopark.View.FavouritesActivity$1
-com/example/minhopark/View/PreferencesActivity.java
- com.example.minhopark.View.PreferencesActivity
- com.example.minhopark.View.PreferencesActivity$1
+com/example/MinhoPark/databinding/ActivityMaps2Binding.java
+ com.example.MinhoPark.databinding.ActivityMaps2Binding
 com/example/minhopark/model/SSParques/SSParquesFacade.java
  com.example.minhopark.model.SSParques.SSParquesFacade
 com/example/minhopark/model/SSParques/IParques.java
  com.example.minhopark.model.SSParques.IParques
+com/example/minhopark/View/FavouritesActivity.java
+ com.example.minhopark.View.FavouritesActivity
+ com.example.minhopark.View.FavouritesActivity$1
+com/example/MinhoPark/databinding/ActivityMapsBinding.java
+ com.example.MinhoPark.databinding.ActivityMapsBinding
 com/example/minhopark/model/SSUtilizadores/IUtilizadores.java
  com.example.minhopark.model.SSUtilizadores.IUtilizadores
+com/example/minhopark/model/SSParques/EstadoOperacional.java
+ com.example.minhopark.model.SSParques.EstadoOperacional
+com/example/minhopark/model/SSParques/Horario.java
+ com.example.minhopark.model.SSParques.Horario
 com/example/minhopark/DataBase/ParqueDAO.java
  com.example.minhopark.DataBase.ParqueDAO
-com/example/minhopark/model/SSUtilizadores/Utilizador.java
- com.example.minhopark.model.SSUtilizadores.Utilizador
+com/example/MinhoPark/databinding/ActivityMainBinding.java
+ com.example.MinhoPark.databinding.ActivityMainBinding
+com/example/minhopark/model/SSParques/Categoria.java
+ com.example.minhopark.model.SSParques.Categoria
+com/example/minhopark/DataBase/CategoriaDAO.java
+ com.example.minhopark.DataBase.CategoriaDAO
 com/example/minhopark/model/SSUtilizadores/SSUtilizadorFacade.java
  com.example.minhopark.model.SSUtilizadores.SSUtilizadorFacade
-com/example/minhopark/model/SSParques/Parque.java
- com.example.minhopark.model.SSParques.Parque
+com/example/minhopark/View/PreferencesActivity.java
+ com.example.minhopark.View.PreferencesActivity
+ com.example.minhopark.View.PreferencesActivity$1
