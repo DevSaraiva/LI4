@@ -100,7 +100,6 @@ public class CategoriaDAO {
         Categoria c11 = new Categoria("Jardim", null);
         Categoria c12 = new Categoria("Reserva_Natural", null);
 
-
         dao.addCategoria(c1);
         dao.addCategoria(c2);
         dao.addCategoria(c3);
@@ -113,7 +112,6 @@ public class CategoriaDAO {
         dao.addCategoria(c10);
         dao.addCategoria(c11);
         dao.addCategoria(c12);
-
 
         Categoria res = dao.getCategoria("Parque_De_Lazer");
 

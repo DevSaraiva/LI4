@@ -36,7 +36,6 @@
                 android:id="@+id/radioButtonLocDoDispositivo"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:checked="true"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <RadioButton
@@ -68,7 +67,6 @@
                 android:id="@+id/radioButton10Parques"
                 android:layout_width="104dp"
                 android:layout_height="63dp"
-                android:checked="true"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <RadioButton
@@ -99,14 +97,12 @@
                 android:id="@+id/radioButtonEvitarPortaNao"
                 android:layout_width="118dp"
                 android:layout_height="56dp"
-                android:checked="true"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </RadioGroup>
 
         <Switch
             android:id="@+id/switchParqueLazer"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="32dp"
@@ -116,7 +112,6 @@
 
         <Switch
             android:id="@+id/switchParqueUrbano"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueLazer"
@@ -125,7 +120,6 @@
 
         <Switch
             android:id="@+id/switchParqueInfatil"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueUrbano"
@@ -134,7 +128,6 @@
 
         <Switch
             android:id="@+id/switchParqueCampismo"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueInfatil"
@@ -143,7 +136,6 @@
 
         <Switch
             android:id="@+id/switchParqueDiversoes"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueCampismo"
@@ -152,7 +144,6 @@
 
         <Switch
             android:id="@+id/switchParquePatinagem"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueDiversoes"
@@ -161,7 +152,6 @@
 
         <Switch
             android:id="@+id/switchParqueEcologico"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParquePatinagem"
@@ -170,7 +160,6 @@
 
         <Switch
             android:id="@+id/switchParqueCidade"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueEcologico"
@@ -179,7 +168,6 @@
 
         <Switch
             android:id="@+id/switchParqueEstatal"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueCidade"
@@ -188,7 +176,6 @@
 
         <Switch
             android:id="@+id/switchParqueNacional"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueEstatal"
@@ -197,7 +184,6 @@
 
         <Switch
             android:id="@+id/switchJardim"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintStart_toStartOf="@+id/switchParqueNacional"
@@ -206,7 +192,6 @@
 
         <Switch
             android:id="@+id/switchParqueNatural"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginBottom="18dp"
