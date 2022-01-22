@@ -1,15 +1,15 @@
-package com.example.minhopark.model;
+package com.example.minhopark.model.SSUtilizadores;
 
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Preferences {
+public class Preferencia {
     private String loc;
     private int nParques;
-    private boolean evitarPortagens;
-    private Set<String> tiposParques;
+    private boolean evitarPortagens; //TODO mudar nome de variaveis para ficar igual ao que deram no relatorio ????
+    private Set<String> tiposParques; // TODO aqui eu fiz asssim mas vendo o relatorio eles puseram lista de integer
 
-    public Preferences () {
+    public Preferencia() {
         this.loc = "LocDispositivo";
         this.nParques = 10;
         this.evitarPortagens = false;

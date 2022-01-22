@@ -1,10 +1,9 @@
 package com.example.minhopark.DataBase;
 
 
-import com.example.minhopark.model.Categoria;
-import com.example.minhopark.model.Horario;
-import com.example.minhopark.model.Parque;
-import com.example.minhopark.model.Preferences;
+import com.example.minhopark.model.SSParques.Categoria;
+import com.example.minhopark.model.SSParques.Horario;
+import com.example.minhopark.model.SSParques.Parque;
 
 import java.io.File;
 import java.io.InputStream;

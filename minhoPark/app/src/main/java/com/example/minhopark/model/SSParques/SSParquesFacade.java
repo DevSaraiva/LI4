@@ -1,10 +1,13 @@
-package com.example.minhopark.model;
+package com.example.minhopark.model.SSParques;
 
 import com.example.minhopark.DataBase.CategoriaDAO;
 import com.example.minhopark.DataBase.HorarioDAO;
 import com.example.minhopark.DataBase.ParqueDAO;
+import com.example.minhopark.model.SSParques.IParques;
+import com.example.minhopark.model.SSParques.Parque;
 
 import java.util.List;
+import java.util.prefs.Preferences;
 
 public class SSParquesFacade implements IParques {
 

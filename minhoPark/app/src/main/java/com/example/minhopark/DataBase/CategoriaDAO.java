@@ -1,12 +1,10 @@
 package com.example.minhopark.DataBase;
 
 
-import com.example.minhopark.model.Categoria;
+import com.example.minhopark.model.SSParques.Categoria;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class CategoriaDAO {

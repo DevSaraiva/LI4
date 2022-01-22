@@ -1,4 +1,4 @@
-package com.example.minhopark.model;
+package com.example.minhopark.model.SSParques;
 
 
 public class Categoria {
