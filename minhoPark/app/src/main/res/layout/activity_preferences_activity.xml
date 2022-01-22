@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".View.PreferencesActivity">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/preferencias" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupLoc"
+            android:layout_width="56dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginBottom="26dp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroupNParques"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioButtonLocDoDispositivo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:checked="true"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radioButtonOutraLoc"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/radioGroupNParques"
+            android:layout_width="292dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="295dp"
+            android:layout_marginBottom="510dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/radioGroupLoc"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioButton5Parques"
+                android:layout_width="77dp"
+                android:layout_height="59dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radioButton10Parques"
+                android:layout_width="104dp"
+                android:layout_height="63dp"
+                android:checked="true"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radioButton15Parques"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroupEvitarPortagens"
+            android:layout_width="309dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="35dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/radioGroupNParques"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupNParques">
+
+            <RadioButton
+                android:id="@+id/radioButtonEvitarPortaSim"
+                android:layout_width="128dp"
+                android:layout_height="63dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radioButtonEvitarPortaNao"
+                android:layout_width="118dp"
+                android:layout_height="56dp"
+                android:checked="true"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/switchParqueLazer"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="@+id/radioGroupEvitarPortagens"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupEvitarPortagens"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueUrbano"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueLazer"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueLazer"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueInfatil"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueUrbano"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueUrbano"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueCampismo"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueInfatil"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueInfatil"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueDiversoes"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueCampismo"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueCampismo"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParquePatinagem"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueDiversoes"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueDiversoes"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueEcologico"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParquePatinagem"
+            app:layout_constraintTop_toBottomOf="@+id/switchParquePatinagem"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueCidade"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueEcologico"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueEcologico"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueEstatal"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueCidade"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueCidade"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchParqueNacional"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueEstatal"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueEstatal"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switchJardim"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            app:layout_constraintStart_toStartOf="@+id/switchParqueNacional"
+            app:layout_constraintTop_toBottomOf="@+id/switchParqueNacional"
+            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+
+        <Switch
+            android:id="@+id/switchParqueNatural"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/switchJardim"
+            app:layout_constraintTop_toBottomOf="@+id/buttonBack"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="89dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="839dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/switchParqueNatural"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="188dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="195dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radioGroupLoc"
+            app:layout_constraintTop_toTopOf="@+id/imageView5"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+ <!--       <Button
+            android:id="@+id/buttonApply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="Apply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupNParques"
+            app:layout_constraintVertical_bias="0.988" />   -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
