@@ -12,12 +12,12 @@ public class Parque implements Serializable {
     String endereco;
     String coordenadas;
     int numCriticas;
-    int rating;
+    float rating;
     List<Horario> horarios; // TODO os gajos no diagrama de classes meteram uma lista de 7 dias na altura saraiva ficou na duvida como eles sabiam o dia do horario
     List<Categoria> categorias;
     EstadoOperacional estadoOp;
 
-    public Parque(int parqueID, String nome, String image, String endereco, String coordenadas, int numCriticas, int rating, List<Horario> horarios, List<Categoria> categorias) {
+    public Parque(int parqueID, String nome, String image, String endereco, String coordenadas, int numCriticas, float rating, List<Horario> horarios, List<Categoria> categorias) {
         this.parqueID = parqueID;
         this.nome = nome;
         this.image = image;
@@ -58,7 +58,7 @@ public class Parque implements Serializable {
         return numCriticas;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 

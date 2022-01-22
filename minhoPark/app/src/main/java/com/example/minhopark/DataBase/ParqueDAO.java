@@ -70,7 +70,7 @@ public class ParqueDAO {
                 String endereco = rs.getString(4);
                 String coordenadas = rs.getString(5);
                 int nrCriticas = rs.getInt(6);
-                int rating = rs.getInt(7);
+                float rating = rs.getFloat(7);
 
                 List<Categoria> categorias = this.getCategorias(parqueID);
                 List<Horario> horarios = this.horarioDAO.getHorarios(parqueID);
