@@ -181,22 +181,6 @@ public class Utilizador {
 
 
 
-    public static void main(String args[]){
-
-
-
-
-        Utilizador u = new Utilizador("x:10,y:20");
-
-        u.savePreferences();
-
-
-    }
-
-
-
-
-
 
 
 
