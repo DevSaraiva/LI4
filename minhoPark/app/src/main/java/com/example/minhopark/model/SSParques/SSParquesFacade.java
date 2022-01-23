@@ -60,65 +60,52 @@ public class SSParquesFacade implements IParques {
     }
 
 
-    public static double distance(double lat1, double lat2, double lon1, double lon2)
-    {
 
-        // The math module contains a function
-        // named toRadians which converts from
-        // degrees to radians.
-        lon1 = Math.toRadians(lon1);
-        lon2 = Math.toRadians(lon2);
-        lat1 = Math.toRadians(lat1);
-        lat2 = Math.toRadians(lat2);
 
-        // Haversine formula
-        double dlon = lon2 - lon1;
-        double dlat = lat2 - lat1;
-        double a = Math.pow(Math.sin(dlat / 2), 2)
-                + Math.cos(lat1) * Math.cos(lat2)
-                * Math.pow(Math.sin(dlon / 2),2);
+    public static double distance(double lat1, double lat2, double lng1, double lng2) {
+        double earthRadius = 6371000; //meters
+        double dLat = Math.toRadians(lat2-lat1);
+        double dLng = Math.toRadians(lng2-lng1);
+        double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
+                        Math.sin(dLng/2) * Math.sin(dLng/2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        double dist = (earthRadius * c);
 
-        double c = 2 * Math.asin(Math.sqrt(a));
-
-        // Radius of earth in kilometers. Use 3956
-        // for miles
-        double r = 6371;
-
-        // calculate the result
-        return(c * r);
+        return dist;
     }
 
-
-    public double compare(Parque p1, Parque p2)
-    {
-        String[] coordenadasInicio = this.utilizador.getCoordenadas().split(",");
-
-        String[] coordenadasP1 = p1.getCoordenadas().split(",");
-        String[] coordenadasP2 = p2.getCoordenadas().split(",");
-
-
-        double d1 = distance(Double.parseDouble(coordenadasP1[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP1[1]),Double.parseDouble(coordenadasInicio[1]));
-        double d2 = distance(Double.parseDouble(coordenadasP2[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP2[1]),Double.parseDouble(coordenadasInicio[1]));
-
-        return d2 - d1;
-    }
 
 
     public Set<Parque> devolveMaisPerto(double maxDist, double latOrg, double lonOrg){
-        Set<Parque> res = new TreeSet<>();
+        Set<Parque> res = new TreeSet<>( (p1,p2) -> {
+
+            String[] coordenadasInicio = this.utilizador.getCoordenadas().split(",");
+
+            String[] coordenadasP1 = p1.getCoordenadas().split(",");
+            String[] coordenadasP2 = p2.getCoordenadas().split(",");
+
+
+            double d1 = distance(Double.parseDouble(coordenadasP1[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP1[1]),Double.parseDouble(coordenadasInicio[1]));
+            double d2 = distance(Double.parseDouble(coordenadasP2[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP2[1]),Double.parseDouble(coordenadasInicio[1]));
+
+
+            return Double.compare(d2,d1);
+
+        });
 
         List<Parque> allParques = this.parques.getParques();
 
         for(Parque p : allParques){
 
-            String[] coordenadas = p.getCoordenadas().split(";");
+            String[] coordenadas = p.getCoordenadas().split(",");
 
-            if(distance(latOrg,Double.parseDouble(coordenadas[1]),lonOrg,Double.parseDouble(coordenadas[1])) <= maxDist){
+
+            if(distance(latOrg,Double.parseDouble(coordenadas[0]),lonOrg,Double.parseDouble(coordenadas[1])) <= maxDist){
                 res.add(p);
             }
         }
-
-
+        
         return res;
     }
 
@@ -126,7 +113,20 @@ public class SSParquesFacade implements IParques {
 
 
 
+ public static void main(String args[]){
 
+
+        String coordenadas = "41.5416871,-8.418896199999999";
+
+        double distance = distance(41.5416871, 41.5416871, -8.418896199999999, -8.418896199999999);
+
+
+        SSParquesFacade ssParquesFacade = new SSParquesFacade(coordenadas);
+
+     System.out.println(ssParquesFacade.devolveMaisPerto(1000000000,41.5416871,-8.418896199999999));
+
+
+ }
 
 
 

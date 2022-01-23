@@ -1,2 +1,0 @@
-com/example/minhopark/ExampleUnitTest.java
- com.example.minhopark.ExampleUnitTest
