@@ -8,12 +8,13 @@ import com.example.minhopark.model.SSUtilizadores.Preferencia;
 import com.example.minhopark.model.SSUtilizadores.SSUtilizadorFacade;
 import com.example.minhopark.model.SSUtilizadores.Utilizador;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SSParquesFacade implements IParques {
+public class SSParquesFacade implements IParques, Serializable {
 
 
     CategoriaDAO categorias;
@@ -31,7 +32,6 @@ public class SSParquesFacade implements IParques {
     }
 
 
-
     @Override
     public Parque getParque(int id) {
         return parques.getParque(id);
@@ -41,26 +41,6 @@ public class SSParquesFacade implements IParques {
     public void addParque(Parque p){
         parques.addParque(p);
     }
-
-    @Override
-    public Set<Parque> pesquisa(Preferencia p) {
-
-        Set<Parque> res = new TreeSet<>();
-
-
-        for(String id : p.getTiposParques()){
-            for(Parque parque : this.parques.getParquesFiltered(id)){
-                res.add(parque);
-            }
-        }
-
-
-        return res;
-
-    }
-
-
-
 
     public static double distance(double lat1, double lat2, double lng1, double lng2) {
         double earthRadius = 6371000; //meters
@@ -77,14 +57,15 @@ public class SSParquesFacade implements IParques {
 
 
 
-    public Set<Parque> devolveMaisPerto(double maxDist, double latOrg, double lonOrg){
+    @Override
+    public Set<Parque> pesquisa(Preferencia p) {
+
         Set<Parque> res = new TreeSet<>( (p1,p2) -> {
 
             String[] coordenadasInicio = this.utilizador.getCoordenadas().split(",");
 
             String[] coordenadasP1 = p1.getCoordenadas().split(",");
             String[] coordenadasP2 = p2.getCoordenadas().split(",");
-
 
             double d1 = distance(Double.parseDouble(coordenadasP1[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP1[1]),Double.parseDouble(coordenadasInicio[1]));
             double d2 = distance(Double.parseDouble(coordenadasP2[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP2[1]),Double.parseDouble(coordenadasInicio[1]));
@@ -94,19 +75,19 @@ public class SSParquesFacade implements IParques {
 
         });
 
-        List<Parque> allParques = this.parques.getParques();
-
-        for(Parque p : allParques){
-
-            String[] coordenadas = p.getCoordenadas().split(",");
-
-
-            if(distance(latOrg,Double.parseDouble(coordenadas[0]),lonOrg,Double.parseDouble(coordenadas[1])) <= maxDist){
-                res.add(p);
+        for(String id : p.getTiposParques()){
+            for(Parque parque : this.parques.getParquesFiltered(id)){
+                res.add(parque);
             }
         }
-        
+
         return res;
+    }
+
+
+
+    public Preferencia getPreferencia(){
+        return  this.utilizador.getPreferencia();
     }
 
 
@@ -123,7 +104,6 @@ public class SSParquesFacade implements IParques {
 
         SSParquesFacade ssParquesFacade = new SSParquesFacade(coordenadas);
 
-     System.out.println(ssParquesFacade.devolveMaisPerto(1000000000,41.5416871,-8.418896199999999));
 
 
  }

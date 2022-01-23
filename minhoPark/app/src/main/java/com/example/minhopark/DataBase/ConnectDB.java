@@ -12,14 +12,14 @@ import java.sql.SQLException;
 
 import java.sql.*;
 
-    public class ConnectDB {
+    public class ConnectDB implements Serializable{
         private Connection connection;
 
         public static Connection getConnection(){
 
 
             try {
-                return DriverManager.getConnection("jdbc:mysql://localhost:3306/minhoPark?autoReconnect=true&useSSL=false","root","password");
+                return DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/minhoPark?autoReconnect=true&useSSL=false","root","password");
             } catch (SQLException e) {
                 e.printStackTrace();
             }

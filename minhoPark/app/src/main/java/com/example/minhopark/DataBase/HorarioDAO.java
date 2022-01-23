@@ -5,13 +5,14 @@ package com.example.minhopark.DataBase;
 
 import com.example.minhopark.model.SSParques.Horario;
 
+import java.io.Serializable;
 import java.sql.*;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HorarioDAO {
+public class HorarioDAO implements Serializable {
     private Connection connection;
 
     public HorarioDAO() {

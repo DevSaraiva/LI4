@@ -1,6 +1,8 @@
 package com.example.minhopark.model.SSParques;
 
-public class EstadoOperacional {
+import java.io.Serializable;
+
+public class EstadoOperacional implements Serializable {
     private boolean estado;
 
     public EstadoOperacional(boolean b) {

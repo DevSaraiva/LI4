@@ -4,10 +4,11 @@ package com.example.minhopark.DataBase;
 import com.example.minhopark.model.SSParques.Categoria;
 
 import java.io.InputStream;
+import java.io.Serializable;
 import java.sql.*;
 
 
-public class CategoriaDAO {
+public class CategoriaDAO implements Serializable {
     private Connection connection;
 
     public CategoriaDAO() {

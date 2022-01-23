@@ -1,9 +1,10 @@
 package com.example.minhopark.model.SSParques;
 
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
-public class Horario {
+public class Horario implements Serializable {
 
     int idHorario;
     LocalTime abertura;

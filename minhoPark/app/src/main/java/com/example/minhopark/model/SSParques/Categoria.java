@@ -1,7 +1,9 @@
 package com.example.minhopark.model.SSParques;
 
 
-public class Categoria {
+import java.io.Serializable;
+
+public class Categoria implements Serializable {
 
     String nome;
     String iconePath;

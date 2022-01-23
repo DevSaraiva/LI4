@@ -7,6 +7,7 @@ import com.example.minhopark.model.SSParques.Parque;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.time.LocalTime;
 import java.util.Arrays;
 
 
-public class ParqueDAO {
+public class ParqueDAO implements Serializable {
     private Connection connection;
     private CategoriaDAO categoriaDAO;
     private HorarioDAO horarioDAO;
@@ -67,7 +68,7 @@ public class ParqueDAO {
                 String nome = rs.getString(2);
                 Blob imagem = rs.getBlob(3);
                 String filename = "parque" + id;
-                String filePath = ConnectDB.convertToFile(imagem, filename);
+                //String filePath = ConnectDB.convertToFile(imagem, filename);
                 String endereco = rs.getString(4);
                 String coordenadas = rs.getString(5);
                 int nrCriticas = rs.getInt(6);
@@ -76,7 +77,7 @@ public class ParqueDAO {
                 List<Categoria> categorias = this.getCategorias(parqueID);
                 List<Horario> horarios = this.horarioDAO.getHorarios(parqueID);
 
-                return new Parque(id,nome, filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
+                return new Parque(id,nome, null,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
 
             }
             connection.close();
@@ -219,7 +220,7 @@ public class ParqueDAO {
                 String nome = rs.getString(2);
                 Blob imagem = rs.getBlob(3);
                 String filename = "parque" + id;
-                String filePath = ConnectDB.convertToFile(imagem, filename);
+                //String filePath = ConnectDB.convertToFile(imagem, filename);
                 String endereco = rs.getString(4);
                 String coordenadas = rs.getString(5);
                 int nrCriticas = rs.getInt(6);
@@ -228,7 +229,7 @@ public class ParqueDAO {
                 List<Categoria> categorias = this.getCategorias(id);
                 List<Horario> horarios = this.horarioDAO.getHorarios(id);
 
-                Parque parque = new Parque(id,nome,filePath,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
+                Parque parque = new Parque(id,nome,null,endereco,coordenadas,nrCriticas,rating,horarios,categorias);
 
                 parques.add(parque);
 

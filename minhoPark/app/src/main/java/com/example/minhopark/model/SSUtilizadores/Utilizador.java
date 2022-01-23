@@ -9,13 +9,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 
-public class Utilizador {
+public class Utilizador implements Serializable {
     String coordenadas;
     Set<Integer> favoritos;
     Preferencia pref;
@@ -24,6 +25,8 @@ public class Utilizador {
 
     public Utilizador(String coordenadas){ // depois adicionar pref e favoritos MUdar
         this.coordenadas = coordenadas;
+        this.favoritos = new TreeSet<>();
+        this.pref = new Preferencia();
 
     }
 

@@ -6,6 +6,7 @@ public interface IUtilizadores {
     void adicionaFavorito(Integer id);
     void removeFavorito(Integer id);
     String getCoordenadas();
+    Preferencia getPreferencia();
 
 }
 

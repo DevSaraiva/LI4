@@ -1,11 +1,13 @@
 package com.example.minhopark.model.SSUtilizadores;
 
-public class SSUtilizadorFacade implements IUtilizadores {
+import java.io.Serializable;
+
+public class SSUtilizadorFacade implements IUtilizadores, Serializable {
     private Utilizador utilizador;
 
 
     public SSUtilizadorFacade(String coordenadas){
-        this.utilizador = getUtilizador(coordenadas);
+        this.utilizador = new Utilizador(coordenadas);
     }
 
     public Utilizador getUtilizador(String coordenadas){
@@ -31,6 +33,11 @@ public class SSUtilizadorFacade implements IUtilizadores {
     @Override
     public String getCoordenadas() {
         return utilizador.getCoordenadas();
+    }
+
+
+    public Preferencia getPreferencia(){
+        return this.utilizador.getPreferencia();
     }
 
 
