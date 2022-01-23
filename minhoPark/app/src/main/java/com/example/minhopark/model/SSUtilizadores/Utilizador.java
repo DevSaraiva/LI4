@@ -22,19 +22,8 @@ public class Utilizador {
 
 
 
-    public Utilizador(String coordenadas){
+    public Utilizador(String coordenadas){ // depois adicionar pref e favoritos MUdar
         this.coordenadas = coordenadas;
-
-        try {
-
-            if(!loadFavoritos()) this.favoritos = new TreeSet<>();
-            if(!loadPrerences()) this.pref = new Preferencia();
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
 
     }
 
@@ -79,113 +68,6 @@ public class Utilizador {
         }
     }
 
-
-    public void savePreferences(){
-
-
-
-        try {
-
-            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/preferencias";
-
-            File file = new File(path.trim());
-
-
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            FileOutputStream fos = new FileOutputStream(file);
-            ObjectOutputStream oos= new ObjectOutputStream(fos);
-            oos.writeObject(this.pref);
-            oos.flush();
-            oos.close();
-            fos.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-    public boolean loadPrerences() throws FileNotFoundException {
-
-        try {
-
-            String path = new java.io.File(".").getCanonicalPath() + "/app/src/main/java/com/example/saves/preferencias";
-
-            File toRead = new File(path.trim());
-            if(!toRead.exists()) return false;
-
-            FileInputStream fis = new FileInputStream(toRead);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-
-            this.pref = (Preferencia) ois.readObject();
-            ois.close();
-            fis.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return true;
-
-
-    }
-
-
-    public boolean loadFavoritos(){
-
-
-        try {
-
-            File toRead = new File("/app/src/main/java/com/example/saves/favoritos");
-
-            if(!toRead.exists()) return  false;
-
-            FileInputStream fis = new FileInputStream(toRead);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-
-            this.favoritos = (TreeSet<Integer>) ois.readObject();
-            ois.close();
-            fis.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return true;
-    }
-
-
-    public void saveFavoritos(){
-        try {
-
-            String path = new java.io.File(".").getCanonicalPath() +  "/app/src/main/java/com/example/saves/favoritos";
-
-            File file = new File(path.trim());
-
-            if (!file.exists()) file.createNewFile();
-            FileOutputStream fos = new FileOutputStream(file);
-            ObjectOutputStream oos= new ObjectOutputStream(fos);
-            oos.writeObject(this.favoritos);
-            oos.flush();
-            oos.close();
-            fos.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-public static void main(String[] args){
-        Utilizador u = new Utilizador(null);
-        u.savePreferences();
-        u.saveFavoritos();
-
-}
 
 
 

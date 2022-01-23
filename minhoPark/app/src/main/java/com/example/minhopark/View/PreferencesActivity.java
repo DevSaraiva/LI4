@@ -3,6 +3,7 @@ package com.example.minhopark.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +15,15 @@ import android.widget.Toast;
 
 import com.example.MinhoPark.R;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
+import com.example.minhopark.model.SSUtilizadores.Utilizador;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class PreferencesActivity extends AppCompatActivity {
-    Preferencia p = new Preferencia();
+    Preferencia p;
     RadioButton radioButtonLoc;
     RadioButton radioButtonNParques;
     RadioButton radioButtonPortagens;
@@ -25,8 +31,30 @@ public class PreferencesActivity extends AppCompatActivity {
     String outroString;
 
 
+    public void savePreferennces() {
+        SharedPreferences prefs = getSharedPreferences("chaveGeral",MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("chaveLoc",p.getLoc());
+        editor.putInt("chaveNParques",p.getnParques());
+        editor.putBoolean("chavePortagens",p.getEvitarPortagens());
+        editor.putStringSet("chaveListTiposParques",p.getTiposParques());
+        editor.commit();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        // bloco que le preferencias dum fichiero
+        // FIXME nao resulta criar uma funcao auxiliar
+        SharedPreferences prefs = getSharedPreferences("chaveGeral",MODE_PRIVATE);
+        String loc = prefs.getString("chaveLoc","LocDispositivo");
+        int nParques = prefs.getInt("chaveNParques",10);
+        boolean portagens = prefs.getBoolean("chavePortagens",false);
+        Set<String> tipos = prefs.getStringSet("chaveListTiposParques",new TreeSet<>());
+        p = new Preferencia(loc,nParques,portagens,tipos);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences_activity);
 
@@ -219,6 +247,8 @@ public class PreferencesActivity extends AppCompatActivity {
                 if (switchReservaNatural.isChecked()) p.addParque("Reserva_Natural");
                 else p.removeParque("Reserva_Natural");
 
+
+                savePreferennces();
                 Intent intent = new Intent(PreferencesActivity.this, MainActivity.class);
                 startActivity(intent);
             }

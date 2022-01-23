@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class Preferencia implements Serializable {
 
 
-    private String loc;
+    private String loc; // isto aqui sao coordewnadas
     private int nParques;
     private boolean evitarPortagens; //TODO mudar nome de variaveis para ficar igual ao que deram no relatorio ????
     private Set<String> tiposParques; // TODO aqui eu fiz asssim mas vendo o relatorio eles puseram lista de integer
@@ -31,6 +31,13 @@ public class Preferencia implements Serializable {
         this.addParque("Jardim");
         this.addParque("Reserva_Natural");
 
+    }
+
+    public Preferencia(String loc, int nParques, boolean portagens, Set<String> tipos) {
+        this.loc = loc;
+        this.nParques = nParques;
+        this.evitarPortagens = portagens;
+        this.tiposParques = tipos;
     }
 
     public String getLoc() {
