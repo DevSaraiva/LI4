@@ -23,8 +23,14 @@ com/example/minhopark/model/SSUtilizadores/Preferencia.java
  com.example.minhopark.model.SSUtilizadores.Preferencia
 com/example/MinhoPark/databinding/ActivityMaps2Binding.java
  com.example.MinhoPark.databinding.ActivityMaps2Binding
+<<<<<<< HEAD
 com/example/minhopark/model/SSParques/SSParquesFacade.java
  com.example.minhopark.model.SSParques.SSParquesFacade
+=======
+com/example/minhopark/View/PreferencesActivity.java
+ com.example.minhopark.View.PreferencesActivity
+ com.example.minhopark.View.PreferencesActivity$1
+>>>>>>> 1363e163eb5b1b10b1bc8d609d1762104c1b2e2c
 com/example/minhopark/model/SSParques/IParques.java
  com.example.minhopark.model.SSParques.IParques
 com/example/minhopark/View/FavouritesActivity.java
@@ -32,18 +38,26 @@ com/example/minhopark/View/FavouritesActivity.java
  com.example.minhopark.View.FavouritesActivity$1
 com/example/minhopark/model/SSUtilizadores/IUtilizadores.java
  com.example.minhopark.model.SSUtilizadores.IUtilizadores
+<<<<<<< HEAD
 com/example/minhopark/model/SSParques/EstadoOperacional.java
  com.example.minhopark.model.SSParques.EstadoOperacional
 com/example/minhopark/model/SSParques/Horario.java
  com.example.minhopark.model.SSParques.Horario
 com/example/minhopark/DataBase/ParqueDAO.java
  com.example.minhopark.DataBase.ParqueDAO
+=======
+com/example/minhopark/DataBase/ParqueDAO.java
+ com.example.minhopark.DataBase.ParqueDAO
+com/example/minhopark/model/SSParques/Horario.java
+ com.example.minhopark.model.SSParques.Horario
+com/example/minhopark/model/SSParques/EstadoOperacional.java
+ com.example.minhopark.model.SSParques.EstadoOperacional
+>>>>>>> 1363e163eb5b1b10b1bc8d609d1762104c1b2e2c
 com/example/MinhoPark/databinding/ActivityMainBinding.java
  com.example.MinhoPark.databinding.ActivityMainBinding
-com/example/minhopark/model/SSParques/Categoria.java
- com.example.minhopark.model.SSParques.Categoria
 com/example/minhopark/DataBase/CategoriaDAO.java
  com.example.minhopark.DataBase.CategoriaDAO
+<<<<<<< HEAD
 com/example/minhopark/model/SSUtilizadores/SSUtilizadorFacade.java
  com.example.minhopark.model.SSUtilizadores.SSUtilizadorFacade
 com/example/minhopark/View/directionHelpers/TaskLoadedCallback.java
@@ -56,3 +70,11 @@ com/example/minhopark/View/directionHelpers/DataParser.java
  com.example.minhopark.View.directionHelpers.DataParser
 com/example/minhopark/View/directionHelpers/PointsParser.java
  com.example.minhopark.View.directionHelpers.PointsParser
+=======
+com/example/minhopark/model/SSParques/Categoria.java
+ com.example.minhopark.model.SSParques.Categoria
+com/example/minhopark/model/SSUtilizadores/SSUtilizadorFacade.java
+ com.example.minhopark.model.SSUtilizadores.SSUtilizadorFacade
+com/example/minhopark/model/SSParques/SSParquesFacade.java
+ com.example.minhopark.model.SSParques.SSParquesFacade
+>>>>>>> 1363e163eb5b1b10b1bc8d609d1762104c1b2e2c

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/josejoao/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/home/saraiva/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
