@@ -1,9 +1,16 @@
 package com.example.minhopark.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,9 +22,9 @@ import android.widget.Toast;
 
 import com.example.MinhoPark.R;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
-import com.example.minhopark.model.SSUtilizadores.Utilizador;
 
-import java.util.HashSet;
+
+
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -32,12 +39,13 @@ public class PreferencesActivity extends AppCompatActivity {
 
 
     public void savePreferennces() {
-        SharedPreferences prefs = getSharedPreferences("chaveGeral",MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("chaveGeral", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("chaveLoc",p.getLoc());
-        editor.putInt("chaveNParques",p.getnParques());
-        editor.putBoolean("chavePortagens",p.getEvitarPortagens());
-        editor.putStringSet("chaveListTiposParques",p.getTiposParques());
+        editor.putString("chaveLoc", p.getLoc());
+        editor.putInt("chaveNParques", p.getnParques());
+        editor.putBoolean("chavePortagens", p.getEvitarPortagens());
+        editor.putStringSet("chaveListTiposParques", p.getTiposParques());
+
         editor.commit();
     }
 
@@ -47,29 +55,31 @@ public class PreferencesActivity extends AppCompatActivity {
 
         // bloco que le preferencias dum fichiero
         // FIXME nao resulta criar uma funcao auxiliar
-        SharedPreferences prefs = getSharedPreferences("chaveGeral",MODE_PRIVATE);
-        String loc = prefs.getString("chaveLoc","LocDispositivo");
-        int nParques = prefs.getInt("chaveNParques",10);
-        boolean portagens = prefs.getBoolean("chavePortagens",false);
-        Set<String> tipos = prefs.getStringSet("chaveListTiposParques",new TreeSet<>());
-        p = new Preferencia(loc,nParques,portagens,tipos);
+        SharedPreferences prefs = getSharedPreferences("chaveGeral", MODE_PRIVATE);
+        String loc = prefs.getString("chaveLoc", buscarInformacoesGPS());
+        int nParques = prefs.getInt("chaveNParques", 10);
+        boolean portagens = prefs.getBoolean("chavePortagens", false);
+        Set<String> tipos = prefs.getStringSet("chaveListTiposParques", new TreeSet<>());
+        p = new Preferencia(loc, nParques, portagens, tipos);
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences_activity);
 
+
         RadioGroup radioGroupLoc = findViewById(R.id.radioGroupLoc);
         RadioGroup radioGroupNParques = findViewById(R.id.radioGroupNParques);
         RadioGroup radioGroupPortagens = findViewById(R.id.radioGroupEvitarPortagens);
 
+        //parte que mete no inicio todos os butoes de acordo com as preferencias guardadas
         RadioButton locDispositivo = findViewById(R.id.radioButtonLocDoDispositivo);
         RadioButton outraLoc = findViewById(R.id.radioButtonOutraLoc);
-        if (p.getLoc().equals("LocDispositivo")) {
+        if (prefs.getBoolean("chaveBoolLocDispositivo",true)) {
             locDispositivo.setChecked(true);
-        }
-
-        if (p.getLoc().equals("LocOutro")) {
+        } else {
             outraLoc.setChecked(true);
+            EditText editText = findViewById(R.id.editTextOutraLoc);
+            editText.setText(p.getLoc());
         }
 
         RadioButton parques5 = findViewById(R.id.radioButton5Parques);
@@ -169,18 +179,39 @@ public class PreferencesActivity extends AppCompatActivity {
                 int radioPortId = radioGroupPortagens.getCheckedRadioButtonId();
                 radioButtonPortagens = findViewById(radioPortId);
 
-                switch (radioLocId){
+                SharedPreferences.Editor editor = prefs.edit();
+
+                switch (radioLocId) {
                     case R.id.radioButtonLocDoDispositivo:
-                        // TODO - buscar locDispositivo
-                        p.setLoc("LocDispositivo");
+
+                        String res = buscarInformacoesGPS();
+                        if (res.equals("ERRO")) {
+                            Toast.makeText(PreferencesActivity.this, "ERRO PERMISSOES", Toast.LENGTH_LONG).show();
+                        } else if (res.equals("GPS DESABILITADO")) {
+                            Toast.makeText(PreferencesActivity.this, "GPS DESABILITADO", Toast.LENGTH_LONG).show();
+                        } else {
+                            editor.putBoolean("chaveBoolLocDispositivo", true);
+                            editor.commit();
+                            p.setLoc(res);
+
+                        }
+                        ;
                         break;
 
                     case (R.id.radioButtonOutraLoc):
-                        outroEditText = findViewById(R.id.editTextTextPersonName);
+
+
+                        outroEditText = findViewById(R.id.editTextOutraLoc);
                         outroString = outroEditText.getText().toString().trim();
-                        Toast.makeText(getApplicationContext(), outroString, Toast.LENGTH_LONG).show(); //TODO tirar este TOAST e passar para a BD
-                        // TODO - buscar ao campo de texto
-                        p.setLoc("LocOutra");
+                        if (verificaCoordenadas(outroString)){
+                            editor.putBoolean("chaveBoolLocDispositivo", false);
+                            editor.commit();
+                            p.setLoc(outroString);
+
+                        }else {
+                            Toast.makeText(getApplicationContext(),"Coordenadas Inválidas", Toast.LENGTH_LONG).show();
+                        }
+
                         break;
 
                 }
@@ -208,7 +239,6 @@ public class PreferencesActivity extends AppCompatActivity {
                         p.setEvitarPortagens(false);
                         break;
                 }
-
 
 
                 if (switchParqueLazer.isChecked()) p.addParque("Parque_De_Lazer");
@@ -254,64 +284,59 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
 
-        /*Button buttonAplly = findViewById(R.id.buttonApply);
-        buttonAplly.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int radioLocId = radioGroupLoc.getCheckedRadioButtonId();
-                radioButtonLoc = findViewById(radioLocId);
-
-                int radioNParquesId = radioGroupNParques.getCheckedRadioButtonId();
-                radioButtonNParques = findViewById(radioNParquesId);
-
-                int radioPortId = radioGroupPortagens.getCheckedRadioButtonId();
-                radioButtonPortagens = findViewById(radioPortId);
-
-
-
-                switch (radioLocId){
-                    case R.id.radioButtonLocDoDispositivo:
-                        p.setLoc("LocDispositivo");
-                        break;
-
-                    case R.id.radioButtonOutraLoc:
-                        p.setLoc("LocOutra");
-                        break;
-                }
-
-                switch (radioNParquesId) {
-                    case R.id.radioButton5Parques:
-                        p.setnParques(5);
-                        break;
-
-                    case R.id.radioButton10Parques:
-                        p.setnParques(10);
-                        break;
-
-                    case R.id.radioButton15Parques:
-                        p.setnParques(15);
-                        break;
-                }
-
-                switch (radioPortId) {
-                    case R.id.radioButtonEvitarPortaSim:
-                        //p.setEvitarPortagens(true);
-                        break;
-
-                    case R.id.radioButtonEvitarPortaNao:
-                        //p.setEvitarPortagens(false);
-                        break;
-                }
-
-
-            }
-        });*/
-
-
-
 
 
     }
 
+    public String buscarInformacoesGPS() {
+        String texto = "ERRO";
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
+            ActivityCompat.requestPermissions(PreferencesActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            ActivityCompat.requestPermissions(PreferencesActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+            ActivityCompat.requestPermissions(PreferencesActivity.this, new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, 1);
+            return texto;
+        }
+
+        LocationManager mlocManager = (LocationManager) getSystemService(PreferencesActivity.this.LOCATION_SERVICE);
+        LocationListener mlocListener = new MinhaLocalizacaoListener();
+
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
+
+        if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            texto =  MinhaLocalizacaoListener.latitude + ","  + MinhaLocalizacaoListener.longitude ;
+
+            //Toast.makeText(PreferencesActivity.this, texto, Toast.LENGTH_LONG).show();
+        } else {
+            //Toast.makeText(PreferencesActivity.this, "GPS DESABILITADO", Toast.LENGTH_LONG).show();
+            texto = "GPS DESABILITADO";
+        }
+
+        return texto;
+
+    }
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean verificaCoordenadas(String coordenas){
+        String[] parts = coordenas.split(",");
+        if(parts.length!=2) {return false;}
+        if(!isNumeric(parts[0]) || !isNumeric(parts[1])) {return false;}
+        double latitude = Double.parseDouble(parts[0]);
+        double longitude = Double.parseDouble(parts[1]);
+        if(latitude>90 || latitude<-90) {return false;}
+        if(longitude>180 || longitude<-180) {return false;}
+        return true;
+    }
 }

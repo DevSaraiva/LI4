@@ -23,11 +23,11 @@ public class SSParquesFacade implements IParques, Serializable {
     IUtilizadores utilizador;
 
     
-    public SSParquesFacade(String coordenadas){
+    public SSParquesFacade(Preferencia p, Set<Integer> favoritos){
         this.categorias = new CategoriaDAO();
         this.horarios = new HorarioDAO();
         this.parques = new ParqueDAO();
-        this.utilizador = new SSUtilizadorFacade(coordenadas);
+        this.utilizador = new SSUtilizadorFacade(p,favoritos);
 
     }
 
@@ -89,25 +89,6 @@ public class SSParquesFacade implements IParques, Serializable {
     public Preferencia getPreferencia(){
         return  this.utilizador.getPreferencia();
     }
-
-
-
-
-
- public static void main(String args[]){
-
-
-        String coordenadas = "41.5416871,-8.418896199999999";
-
-        double distance = distance(41.5416871, 41.5416871, -8.418896199999999, -8.418896199999999);
-
-
-        SSParquesFacade ssParquesFacade = new SSParquesFacade(coordenadas);
-
-
-
- }
-
 
 
 

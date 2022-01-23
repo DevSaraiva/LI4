@@ -214,7 +214,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextOutraLoc"
             android:layout_width="188dp"
             android:layout_height="43dp"
             android:layout_marginStart="24dp"

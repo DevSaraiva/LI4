@@ -23,10 +23,10 @@ public class Utilizador implements Serializable {
 
 
 
-    public Utilizador(String coordenadas){ // depois adicionar pref e favoritos MUdar
-        this.coordenadas = coordenadas;
-        this.favoritos = new TreeSet<>();
-        this.pref = new Preferencia();
+    public Utilizador(Preferencia p, Set<Integer> favoritos){ // depois adicionar pref e favoritos MUdar
+        this.coordenadas = p.getLoc();
+        this.favoritos = favoritos;
+        this.pref = p;
 
     }
 
@@ -62,16 +62,6 @@ public class Utilizador implements Serializable {
     public void removeFavotito(Integer id) {
         this.favoritos.remove(id);
     }
-
-    public void atualizaCoordenadas() {
-        if (this.pref.getLoc().equals("LocDispositivo")) {
-            //TODO meter coordenadas do dispositivo ir buscar a api maps provavelmente
-        } else {
-            //TODO ler o que ele escreveu no campo texto
-        }
-    }
-
-
 
 
 }
