@@ -208,7 +208,7 @@ public class ParqueDAO {
 
     public List<Parque> getParques(){
         List<Parque> parques = new ArrayList<>();
-        String sql = "SELECT * FROM Parques WHERE idParque=?";
+        String sql = "SELECT * FROM Parques";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -268,7 +268,7 @@ public class ParqueDAO {
         Parque p7 = new Parque(7,"Parque de Street Workout das Andorinhas","./app/src/main/java/com/example/imgs/p7.jpg", "Braga, Portugal","41.55745719999999,-8.4290608",7,(float)4.3,new ArrayList<Horario>(Arrays.asList(new Horario(7, LocalTime.of(00,00,00), LocalTime.of(23,59,5),"TODOS"))),new ArrayList<Categoria>(Arrays.asList(c2,c3)));;
         Parque p8 = new Parque(8,"Parque Infantil do Pachancho","./app/src/main/java/com/example/imgs/p8.jpg", "4710-345 Braga, Portugal","41.56118012989272,-8.415635129892722",90,(float)4.2,new ArrayList<Horario>(Arrays.asList(new Horario(8, LocalTime.of(00,00,00), LocalTime.of(23,59,5), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c3)));;
         Parque p9 = new Parque(9,"Jardim da Casa dos Biscaínhos","./app/src/main/java/com/example/imgs/p10.png", "R. Andrade Corvo 54, 4700-415 Braga, Portugal","41.5508225,-8.4302463",1,(float)5.0,new ArrayList<Horario>(Arrays.asList(new Horario(9, LocalTime.of(9,30,00), LocalTime.of(17,30,00), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c9)));
-        Parque p10 = new Parque(10,"Parque das Camélias","./app/src/main/java/com/example/imgs/p11.jpg", "Braga, Portugal","41.539578,--8.423485699999999",3,(float)4.3,new ArrayList<Horario>(Arrays.asList(new Horario(10, LocalTime.of(00,00,00), LocalTime.of(23,59,59), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c2)));
+        Parque p10 = new Parque(10,"Parque das Camélias","./app/src/main/java/com/example/imgs/p11.jpg", "Braga, Portugal","41.539578,-8.423485699999999",3,(float)4.3,new ArrayList<Horario>(Arrays.asList(new Horario(10, LocalTime.of(00,00,00), LocalTime.of(23,59,59), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c2)));
         Parque p11 = new Parque(11,"Parque de merendas da Amarela","./app/src/main/java/com/example/imgs/p12.png", "Braga, Portugal","41.5374288,-8.4503404",130,(float)3.9,new ArrayList<Horario>(Arrays.asList(new Horario(11, LocalTime.of(00,00,00), LocalTime.of(23,59,59), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c1)));
         Parque p12 = new Parque(12,"Parque do  Lago do Bom Jesus","./app/src/main/java/com/example/imgs/p12.JPG", "4715, Braga, Portugal","41.5549268,-8.3752076",181,(float)4.7,new ArrayList<Horario>(Arrays.asList(new Horario(12, LocalTime.of(00,00,00), LocalTime.of(23,59,59), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c1)));
         Parque p13 = new Parque(13,"Parque Temático do Arnado","./app/src/main/java/com/example/imgs/p13.jpg", "Caminho da Oliveirinha, 4990-150 Pte. de Lima, Portugal","41.771224,-8.5886332",105,(float)4.4,new ArrayList<Horario>(Arrays.asList(new Horario(13, LocalTime.of(9,00,00), LocalTime.of(19,00,00), "TODOS"))), new ArrayList<Categoria>(Arrays.asList(c2)));

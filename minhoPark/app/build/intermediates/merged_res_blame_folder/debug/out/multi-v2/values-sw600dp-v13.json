@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/josejoao/Universidade/3ano/1 Semestre/LI4/Fase3/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/home/saraiva/Desktop/University/LI4/minhoPark/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/josejoao/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/saraiva/.gradle/caches/transforms-3/19075c4677e37e538c54d7f745fc8af4/transformed/appcompat-1.4.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/josejoao/.gradle/caches/transforms-3/e6a6b98a5bf4cf452a4bc3a3002b3bc1/transformed/material-1.5.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/saraiva/.gradle/caches/transforms-3/e6a6b98a5bf4cf452a4bc3a3002b3bc1/transformed/material-1.5.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
