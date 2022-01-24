@@ -39,9 +39,6 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
     private Set<Parque> parques;
 
-    private LatLng braga = new LatLng(41.5510583, -8.4280045);
-
-
 
     private class Connect extends AsyncTask<Void, Void, Set<Parque>> {
 
@@ -159,12 +156,13 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
+        LatLng coord = null;
 
         for(Parque p : this.parques){
 
             String[] coordenads = p.getCoordenadas().split(",");
 
-            LatLng coord = new LatLng(Double.parseDouble(coordenads[0]),Double.parseDouble(coordenads[1]));
+            coord = new LatLng(Double.parseDouble(coordenads[0]),Double.parseDouble(coordenads[1]));
 
             mMap.addMarker(new MarkerOptions().position(coord).title(p.getNome()));
 
@@ -172,7 +170,7 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
 
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(braga));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(coord));
     }
 
     @Override

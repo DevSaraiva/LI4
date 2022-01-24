@@ -1,10 +1,10 @@
 package com.example.minhopark.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -20,13 +20,19 @@ import com.example.MinhoPark.R;
 import com.example.minhopark.model.SSParques.Parque;
 import com.example.minhopark.model.SSParques.SSParquesFacade;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.Set;
 import java.util.TreeSet;
 
-public class DetalhesParque extends AppCompatActivity {
+public class DetalhesParque extends FragmentActivity implements OnMapReadyCallback {
 
     Parque parque;
+    private GoogleMap mMap;
 
     private class Connect extends AsyncTask<Void, Void, Parque> {
 
@@ -164,6 +170,25 @@ public class DetalhesParque extends AppCompatActivity {
             texto = "GPS DESABILITADO";
         }
         return texto;
+
+    }
+
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+
+        String[] coordenads = parque.getCoordenadas().split(",");
+
+        LatLng coord = new LatLng(Double.parseDouble(coordenads[0]),Double.parseDouble(coordenads[1]));
+
+        mMap.addMarker(new MarkerOptions().position(coord).title(parque.getNome()));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(coord));
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
