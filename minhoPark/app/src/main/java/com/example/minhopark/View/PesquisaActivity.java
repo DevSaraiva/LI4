@@ -143,10 +143,8 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
         if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             texto =  MinhaLocalizacaoListener.latitude + ","  + MinhaLocalizacaoListener.longitude ;
-
-            //Toast.makeText(PreferencesActivity.this, texto, Toast.LENGTH_LONG).show();
+            
         } else {
-            //Toast.makeText(PreferencesActivity.this, "GPS DESABILITADO", Toast.LENGTH_LONG).show();
             texto = "GPS DESABILITADO";
         }
         return texto;
