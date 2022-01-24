@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.LocationListener;
@@ -111,6 +112,11 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
            button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
            button.setId(parque.getParqueID());
            button.setText(parque.getNome());
+           button.setOnClickListener((a) -> {
+               Intent i = new Intent(PesquisaActivity.this, DetalhesParque.class);
+               i.putExtra("parqueID",parque.getParqueID());
+               startActivity(i);
+           });
 
            btn_layer.addView(button);
         }

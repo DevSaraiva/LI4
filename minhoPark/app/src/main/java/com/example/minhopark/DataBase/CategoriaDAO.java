@@ -13,7 +13,7 @@ public class CategoriaDAO implements Serializable {
 
     public CategoriaDAO() {
         try{
-            this.connection = ConnectDB .getConnection();
+            this.connection = ConnectDB.getConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }
