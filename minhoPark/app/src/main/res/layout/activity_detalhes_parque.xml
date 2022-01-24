@@ -121,15 +121,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Endereco" />
 
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="167dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="148dp"
-        android:src="@drawable/mostrarcaminho"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/menuir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menuir"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="474dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="33dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="73dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/menuir"
+        app:layout_constraintEnd_toEndOf="@+id/menuir"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/menuir"
+        app:layout_constraintTop_toTopOf="@+id/menuir"
+        app:layout_constraintVertical_bias="0.666"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        String[] coordUtilizadores = getIntent().getStringExtra("loc").split(",");
+        String[] coordParque = getIntent().getStringExtra("coordenadas").split(",");
+
+        LatLng utilizador = new LatLng(Double.parseDouble(coordUtilizadores[0]),Double.parseDouble(coordUtilizadores[1]));
+        LatLng parque = new LatLng(Double.parseDouble(coordParque[0]),Double.parseDouble(coordParque[1]));
+
+
+
+
         binding = ActivityMaps2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -41,7 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        String url = getUrl(braga, barcelos, "driving");
+        String url = getUrl(utilizador, parque, "driving");
         new FetchURL(MapsActivity.this).execute(url, "driving");
     }
 

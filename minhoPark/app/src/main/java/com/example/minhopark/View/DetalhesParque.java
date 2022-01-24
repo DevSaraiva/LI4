@@ -69,8 +69,6 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
     }
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,7 +118,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         // ja esta nos favoritos
         if (favoritos.contains(parque.getParqueID())) {
             buttonFav.setActivated(true);
-        } else { // nao esta nos favoritos
+        } else {
             buttonFav.setActivated(false);
         }
 
@@ -144,8 +142,6 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
                 editor.putStringSet("chaveFavoritos", favoritosGravar);
                 editor.commit();
 
-
-                //Toast.makeText(DetalhesParque.this, "Click", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -191,17 +187,17 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
 
         //Botao para IR para o mapa
-       /* Button botaoIr = findViewById(R.id.buttonIr);
+
+        Button botaoIr = findViewById(R.id.buttonIr);
         botaoIr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
+                intent.putExtra("loc",p.getLoc());
+                intent.putExtra("coordenadas", parque.getCoordenadas());
                 startActivity(intent);
             }
         });
-*/
-
-
 
 
 
