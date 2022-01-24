@@ -104,4 +104,7 @@
     <string name="texto3">Texto3</string>
     <string name="texto2">Texto2</string>
     <string name="texto1">Texto1</string>
+    <string name="procura">PROCURA</string>
+    <string name="favoritos">FAVORITOS</string>
+    <string name="prefer_ncias">PREFERÊNCIAS</string>
 </resources>

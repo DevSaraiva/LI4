@@ -6,23 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.minhopark.View.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/menu" />
 
     <Button
         android:id="@+id/buttonPreferencias"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="PREFERÊNCIAS"
+        android:text="@string/prefer_ncias"
+        android:textColor="#AED581"
         app:backgroundTint="#3F552A"
         app:layout_constraintBottom_toTopOf="@+id/buttonFavoritos"
         app:layout_constraintEnd_toEndOf="@+id/buttonFavoritos"
@@ -34,11 +24,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
         android:layout_marginBottom="79dp"
-        android:text="FAVORITOS"
+        android:text="@string/favoritos"
+        android:textColor="#AED581"
         app:backgroundTint="#3F552A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,11 +39,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="207dp"
-        android:text="PROCURA"
+        android:text="@string/procura"
+        android:textColor="#AED581"
         app:backgroundTint="#3F552A"
         app:layout_constraintBottom_toTopOf="@+id/buttonPreferencias"
         app:layout_constraintEnd_toEndOf="@+id/buttonPreferencias"
         app:layout_constraintStart_toStartOf="@+id/buttonPreferencias"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
