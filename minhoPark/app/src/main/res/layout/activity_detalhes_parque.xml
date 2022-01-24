@@ -126,9 +126,12 @@
         android:id="@+id/menuir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="460dp"
         android:src="@drawable/menuir"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="474dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map" />
 
     <Button
         android:id="@+id/button"
@@ -145,5 +148,29 @@
         app:layout_constraintTop_toTopOf="@+id/menuir"
         app:layout_constraintVertical_bias="0.666"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <RadioGroup
+        android:layout_width="26dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/menuir"
+        app:layout_constraintTop_toTopOf="@+id/menuir">
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="26dp"
+            android:layout_height="33dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
