@@ -171,17 +171,20 @@
         <RadioButton
             android:id="@+id/pe"
             android:layout_width="match_parent"
-            android:layout_height="24dp" />
+            android:layout_height="24dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/bicicleta"
             android:layout_width="26dp"
-            android:layout_height="33dp" />
+            android:layout_height="33dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/carro"
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </RadioGroup>
 
