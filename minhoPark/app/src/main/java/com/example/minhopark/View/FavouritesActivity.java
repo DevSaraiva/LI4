@@ -68,22 +68,6 @@ public class FavouritesActivity extends AppCompatActivity {
 
 
 
-
-        //escreve favoritos para teste
-        /*
-        Set<String> favoritosAux = new TreeSet<>();
-        favoritosAux.add("1"); favoritosAux.add("2");favoritosAux.add("3");favoritosAux.add("4");favoritosAux.add("5");favoritosAux.add("6");favoritosAux.add("7");
-        favoritosAux.add("8");favoritosAux.add("9");favoritosAux.add("10");favoritosAux.add("11");favoritosAux.add("12");
-
-
-        SharedPreferences prefs = getSharedPreferences("chaveGeral", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putStringSet("chaveFavoritos", favoritosAux);
-        editor.commit();
-*/
-
-
-
         //le preferencias
         SharedPreferences prefs = getSharedPreferences("chaveGeral", MODE_PRIVATE);
         String loc = prefs.getString("chaveLoc", buscarInformacoesGPS());
@@ -103,9 +87,13 @@ public class FavouritesActivity extends AppCompatActivity {
 
 
 
-       LinearLayout btn_layer= (LinearLayout) findViewById(R.id.btnLayout);
+       LinearLayout layer= (LinearLayout) findViewById(R.id.btnLayout);
 
         for (Integer i : favoritos) {
+            LinearLayout parque_layout= new LinearLayout(this);
+            parque_layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+            parque_layout.setOrientation(LinearLayout.HORIZONTAL);
+
             //Get Parque
             /*Parque parque = null;
             DetalhesParque.Connect task = new DetalhesParque.Connect(p,favoritos,i);
@@ -140,8 +128,9 @@ public class FavouritesActivity extends AppCompatActivity {
 
             });
 
-            btn_layer.addView(tv);
-            btn_layer.addView(buttonFav);
+            parque_layout.addView(tv);
+            parque_layout.addView(buttonFav);
+            layer.addView(parque_layout);
         }
 
 
