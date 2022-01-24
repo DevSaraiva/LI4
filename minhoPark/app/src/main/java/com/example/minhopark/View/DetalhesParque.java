@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,6 +14,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -77,6 +80,15 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         Preferencia p = new Preferencia(loc, nParques, portagens, tipos);
 
 
+        //Botao para IR para o mapa
+        Button botaoIr = findViewById(R.id.buttonIr);
+        botaoIr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //gerar Favoritos
 
