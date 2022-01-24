@@ -8,10 +8,10 @@ import java.util.TreeSet;
 public class Preferencia implements Serializable {
 
 
-    private String loc; // isto aqui sao coordewnadas
+    private String loc;
     private int nParques;
-    private boolean evitarPortagens; //TODO mudar nome de variaveis para ficar igual ao que deram no relatorio ????
-    private Set<String> tiposParques; // TODO aqui eu fiz asssim mas vendo o relatorio eles puseram lista de integer
+    private boolean evitarPortagens;
+    private Set<String> tiposParques;
 
     public Preferencia() {
         this.loc = "LocDispositivo";

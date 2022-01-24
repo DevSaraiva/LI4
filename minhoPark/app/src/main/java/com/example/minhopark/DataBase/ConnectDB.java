@@ -1,9 +1,7 @@
 package com.example.minhopark.DataBase;
 
 
-import javax.sql.rowset.serial.SerialBlob;
 import java.io.*;
-import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

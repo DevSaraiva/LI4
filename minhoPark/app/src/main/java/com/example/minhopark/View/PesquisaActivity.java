@@ -143,7 +143,7 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
         if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             texto =  MinhaLocalizacaoListener.latitude + ","  + MinhaLocalizacaoListener.longitude ;
-            
+
         } else {
             texto = "GPS DESABILITADO";
         }

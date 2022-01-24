@@ -6,11 +6,8 @@ import com.example.minhopark.DataBase.ParqueDAO;
 import com.example.minhopark.model.SSUtilizadores.IUtilizadores;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
 import com.example.minhopark.model.SSUtilizadores.SSUtilizadorFacade;
-import com.example.minhopark.model.SSUtilizadores.Utilizador;
-
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
