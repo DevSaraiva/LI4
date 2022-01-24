@@ -67,6 +67,7 @@ public class FavouritesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favourites);
 
 
+
         //le preferencias
         SharedPreferences prefs = getSharedPreferences("chaveGeral", MODE_PRIVATE);
         String loc = prefs.getString("chaveLoc", buscarInformacoesGPS());
@@ -85,9 +86,15 @@ public class FavouritesActivity extends AppCompatActivity {
 
 
 
-       LinearLayout btn_layer= (LinearLayout) findViewById(R.id.btnLayout);
+
+       LinearLayout layer= (LinearLayout) findViewById(R.id.btnLayout);
+
 
         for (Integer i : favoritos) {
+            LinearLayout parque_layout= new LinearLayout(this);
+            parque_layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+            parque_layout.setOrientation(LinearLayout.HORIZONTAL);
+
             //Get Parque
 
             Parque parque = null;
@@ -121,8 +128,9 @@ public class FavouritesActivity extends AppCompatActivity {
 
             });
 
-            btn_layer.addView(tv);
-            btn_layer.addView(buttonFav);
+            parque_layout.addView(tv);
+            parque_layout.addView(buttonFav);
+            layer.addView(parque_layout);
         }
 
 
