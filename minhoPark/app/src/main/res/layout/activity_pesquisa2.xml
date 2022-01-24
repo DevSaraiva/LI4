@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.example.minhopark.View.PesquisaActivity">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="664dp"
+        android:layout_height="812dp"
+        android:layout_marginTop="243dp"
+        android:src="@drawable/fundo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="348dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map"
         tools:ignore="SpeakableTextPresentCheck">
@@ -27,8 +38,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="417dp"
+        android:layout_height="378dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
