@@ -18,14 +18,8 @@ public class Horario implements Serializable {
         this.dia = dia;
     }
 
-    @Override
     public String toString() {
-        return "Horario{" +
-                "idHorario=" + idHorario +
-                ", abertura=" + abertura +
-                ", encerramento=" + encerramento +
-                ", dia='" + dia + '\'' +
-                '}';
+        return dia + ": " + abertura +" -> " + encerramento+"\n";
     }
 
     public int getIdHorario() {

@@ -14,12 +14,6 @@ public class Categoria implements Serializable {
         this.icone = icone;
     }
 
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "idCategoria=" + nome +
-                '}';
-    }
 
     public String getNome() {
         return nome;
@@ -36,4 +30,11 @@ public class Categoria implements Serializable {
     public void setIconePath(byte[] icone) {
         this.icone = icone;
     }
+
+
+    public String toString() {
+        return this.nome+"\n";
+    }
+
+
 }

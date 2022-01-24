@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.MinhoPark.R;
+import com.example.minhopark.model.SSParques.Categoria;
+import com.example.minhopark.model.SSParques.Horario;
 import com.example.minhopark.model.SSParques.Parque;
 import com.example.minhopark.model.SSParques.SSParquesFacade;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
@@ -29,6 +31,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -64,6 +67,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
     }
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +85,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
 
         //Botao para IR para o mapa
-        Button botaoIr = findViewById(R.id.buttonIr);
+       /* Button botaoIr = findViewById(R.id.buttonIr);
         botaoIr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +93,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
                 startActivity(intent);
             }
         });
-
+*/
         //gerar Favoritos
 
         Set<Integer> facvoritos = new TreeSet<>();
@@ -97,7 +101,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
         //Get Parque
 
-        Connect task = new Connect(p,facvoritos,getIntent().getIntExtra("ParqueID",1));
+        Connect task = new Connect(p,facvoritos,getIntent().getIntExtra("parqueID",1));
         try {
             parque = task.execute().get();
         } catch (Exception e) {
@@ -110,11 +114,11 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
 
         TextView tv2 = (TextView)findViewById(R.id.Categoria);
-        tv2.setText(parque.getCategorias().toString());
+        tv2.setText(ListToStringCategoria(parque.getCategorias()));
 
 
         TextView tv3 = (TextView)findViewById(R.id.Horario);
-        tv3.setText(parque.getHorarios().toString());
+        tv3.setText(ListToStringHorario(parque.getHorarios()));
 
 
         TextView tv4 = (TextView)findViewById(R.id.estadoOperacional);
@@ -133,11 +137,11 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
 
         TextView tv6 = (TextView)findViewById(R.id.Distancia);
-        tv6.setText(String.valueOf(dist));
+        tv6.setText(String.valueOf("Distancia" + dist));
 
 
         TextView tv7 = (TextView)findViewById(R.id.rating);
-        tv7.setText(String.valueOf(parque.getRating()));
+        tv7.setText(String.valueOf("Rating" + parque.getRating()));
 
 
 
@@ -204,6 +208,23 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
     }
 
+    public String ListToStringHorario(List<Horario> l) {
+        StringBuilder sb = new StringBuilder();
+        for(Horario h : l){
+            sb.append(h.toString());
+        }
+        return sb.toString();
+    }
+
+
+
+    public String ListToStringCategoria(List<Categoria> l) {
+        StringBuilder sb = new StringBuilder();
+        for(Categoria c : l){
+            sb.append(c.toString());
+        }
+        return sb.toString();
+    }
 
 
 
