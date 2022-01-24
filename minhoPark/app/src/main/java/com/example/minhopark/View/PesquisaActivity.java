@@ -14,6 +14,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import com.example.MinhoPark.R;
 import com.example.minhopark.model.SSParques.Parque;
 import com.example.minhopark.model.SSParques.SSParquesFacade;
@@ -71,8 +73,6 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisa2);
 
-
-
         //buttons
 
         //gerar preferencias
@@ -83,6 +83,7 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
         boolean portagens = prefs.getBoolean("chavePortagens", false);
         Set<String> tipos = prefs.getStringSet("chaveListTiposParques", new TreeSet<>());
         Preferencia p = new Preferencia(loc, nParques, portagens, tipos);
+
 
 
         //gerar Favoritos
@@ -100,7 +101,6 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
         }
 
         this.parques = parques;
-
 
         LinearLayout btn_layer= (LinearLayout) findViewById(R.id.btnLayout);
 
