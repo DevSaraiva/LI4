@@ -28,6 +28,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -37,10 +38,10 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
 
-    private Set<Parque> parques;
+    private List<Parque> parques;
 
 
-    private class Connect extends AsyncTask<Void, Void, Set<Parque>> {
+    private class Connect extends AsyncTask<Void, Void, List<Parque>> {
 
 
         Preferencia preferencia;
@@ -53,12 +54,12 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
         }
 
         @Override
-        protected Set<Parque> doInBackground(Void ...params) {
+        protected List<Parque> doInBackground(Void ...params) {
 
 
                 SSParquesFacade ssParquesFacade = new SSParquesFacade(preferencia, favoritos);
 
-                Set<Parque> parques = ssParquesFacade.pesquisa(preferencia);
+                List<Parque> parques = ssParquesFacade.pesquisa(preferencia);
 
                 return parques;
         }
@@ -90,15 +91,14 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
         //gerar butões
 
-        Set<Parque> parques = null;
         Connect task = new Connect(p,facvoritos);
         try {
-            parques = task.execute().get();
+            this.parques = task.execute().get();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        this.parques = parques;
+
 
         LinearLayout btn_layer= (LinearLayout) findViewById(R.id.btnLayout);
 

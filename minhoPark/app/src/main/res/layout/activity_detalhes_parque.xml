@@ -109,27 +109,30 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="185dp"
-        android:layout_height="110dp"
+        android:layout_width="169dp"
+        android:layout_height="111dp"
         android:layout_marginTop="68dp"
         android:layout_marginBottom="112dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/parkImg"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/mostrarcaminho" />
 
     <TextView
         android:id="@+id/Endereco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
         android:layout_marginBottom="132dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.662"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parkImg" />
 
     <RadioGroup
         android:layout_width="wrap_content"

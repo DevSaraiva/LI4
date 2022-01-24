@@ -9,6 +9,7 @@ import com.example.minhopark.model.SSUtilizadores.SSUtilizadorFacade;
 import com.example.minhopark.model.SSUtilizadores.Utilizador;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -58,9 +59,9 @@ public class SSParquesFacade implements IParques, Serializable {
 
 
     @Override
-    public Set<Parque> pesquisa(Preferencia p) {
+    public List<Parque> pesquisa(Preferencia p) {
 
-        Set<Parque> res = new TreeSet<>( (p1,p2) -> {
+        Set<Parque> parques = new TreeSet<>( (p1,p2) -> {
 
             String[] coordenadasInicio = this.utilizador.getCoordenadas().split(",");
 
@@ -75,10 +76,20 @@ public class SSParquesFacade implements IParques, Serializable {
 
         });
 
+        List<Parque> res = new ArrayList<>();
+
         for(String id : p.getTiposParques()){
             for(Parque parque : this.parques.getParquesFiltered(id)){
-                res.add(parque);
+                parques.add(parque);
             }
+        }
+
+
+        int i = 0;
+        for(Parque pa : parques){
+            res.add(pa);
+            i++;
+            if(i >= p.getnParques()) return res;
         }
 
         return res;
