@@ -195,7 +195,7 @@ public class PreferencesActivity extends AppCompatActivity {
                             p.setLoc(res);
 
                         }
-                        ;
+
                         break;
 
                     case (R.id.radioButtonOutraLoc):

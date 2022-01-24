@@ -190,34 +190,32 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         imgPerson.setImageBitmap(bitmap);
 
 
-        //Botao para selecionar transporte
-
-        RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup);
-
-        int meioTransporte = r.getCheckedRadioButtonId();
-
-        switch(meioTransporte){
-            case R.id.pe:
-                this.veiculo="pe";
-                break;
-            case R.id.carro:
-                this.veiculo="carro";
-                break;
-            case R.id.bicicleta:
-                this.veiculo="bicicleta";
-                break;
-        }
-
-
-
         //Botao para IR para o mapa
 
         Button botaoIr = findViewById(R.id.buttonIr);
         botaoIr.setOnClickListener((a) ->{
+
+            RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup);
+
+            int meioTransporte = r.getCheckedRadioButtonId();
+
+            switch(meioTransporte){
+                case R.id.pe:
+                    this.veiculo="pe";
+                    break;
+                case R.id.carro:
+                    this.veiculo="carro";
+                    break;
+                case R.id.bicicleta:
+                    this.veiculo="bicicleta";
+                    break;
+            }
+
             Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
             intent.putExtra("loc",p.getLoc());
             intent.putExtra("coordenadas", parque.getCoordenadas());
-            intent.putExtra("veiculo", Boolean.parseBoolean(this.veiculo));
+            intent.putExtra("veiculo", this.veiculo);
+            intent.putExtra("portagem",String.valueOf(p.getEvitarPortagens()));
             startActivity(intent);
         });
 

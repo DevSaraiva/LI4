@@ -3,6 +3,7 @@ package com.example.minhopark.View;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.widget.Switch;
 
 import com.example.MinhoPark.R;
 import com.example.MinhoPark.databinding.ActivityMaps2Binding;
@@ -36,6 +37,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String[] coordUtilizadores = getIntent().getStringExtra("loc").split(",");
         String[] coordParque = getIntent().getStringExtra("coordenadas").split(",");
 
+        String veiculo = getIntent().getStringExtra("veiculo");
+
+        boolean portagem = false;
+        if(getIntent().getStringExtra("portagem").equals("true")) portagem = true;
+
+
+        String mode = null;
+
+        if(veiculo.equals("pe")) mode = "walking";
+        if(veiculo.equals("bicicleta")) mode = "cycling";
+        if(veiculo.equals("carro")) mode = "driving";
+
         utilizador = new LatLng(Double.parseDouble(coordUtilizadores[0]),Double.parseDouble(coordUtilizadores[1]));
         parque = new LatLng(Double.parseDouble(coordParque[0]),Double.parseDouble(coordParque[1]));
 
@@ -48,8 +61,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        String url = getUrl(utilizador, parque, "driving");
-        new FetchURL(MapsActivity.this).execute(url, "driving");
+
+        if(!portagem && veiculo.equals("carro")){
+            String url = getUrlSemPortagens(utilizador, parque);
+            new FetchURL(MapsActivity.this).execute(url, mode);
+        }else{
+            String url = getUrl(utilizador, parque, mode);
+            new FetchURL(MapsActivity.this).execute(url, mode);
+        }
+
     }
 
     /**
@@ -61,6 +81,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    private String getUrlSemPortagens(LatLng origin, LatLng dest){
+        // Origin of route
+        String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
+        // Destination of route
+        String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
+        String mode = "avoid=tolls&mode=driving";
+        String parameters = str_origin + "&" + str_dest + "&" + mode;
+        String output = "json";
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters + "&key=" + getString(R.string.google_maps_key);
+
+        return url;
+    }
+
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
