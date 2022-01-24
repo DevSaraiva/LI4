@@ -28,6 +28,7 @@ import com.example.minhopark.model.SSUtilizadores.Preferencia;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -84,19 +85,19 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         Preferencia p = new Preferencia(loc, nParques, portagens, tipos);
 
 
-        //Botao para IR para o mapa
-       /* Button botaoIr = findViewById(R.id.buttonIr);
-        botaoIr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-*/
+
         //gerar Favoritos
 
         Set<Integer> facvoritos = new TreeSet<>();
+
+
+
+        //mapa
+
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
 
 
         //Get Parque
@@ -137,19 +138,29 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
 
         TextView tv6 = (TextView)findViewById(R.id.Distancia);
-        tv6.setText(String.valueOf("Distancia" + dist));
+        tv6.setText(String.valueOf("Distancia ->" + dist));
 
 
         TextView tv7 = (TextView)findViewById(R.id.rating);
-        tv7.setText(String.valueOf("Rating" + parque.getRating()));
-
-
+        tv7.setText(String.valueOf("Rating ->" + parque.getRating()));
 
 
         byte[] picData = parque.getImage();
         ImageView imgPerson = (ImageView) findViewById(R.id.parkImg);
         Bitmap bitmap = BitmapFactory.decodeByteArray(picData, 0, picData.length);
         imgPerson.setImageBitmap(bitmap);
+
+
+        //Botao para IR para o mapa
+       /* Button botaoIr = findViewById(R.id.buttonIr);
+        botaoIr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+*/
 
 
 
