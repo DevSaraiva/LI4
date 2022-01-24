@@ -92,23 +92,24 @@ public class FavouritesActivity extends AppCompatActivity {
 
         for (Integer i : favoritos) {
             LinearLayout parque_layout= new LinearLayout(this);
-            parque_layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+            parque_layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT));
             parque_layout.setOrientation(LinearLayout.HORIZONTAL);
 
             //Get Parque
 
-            Parque parque = null;
+            /*Parque parque = null;
             Connect task = new Connect(p,favoritos,i);
             try {
                 parque = task.execute().get();
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            }*/
 
             TextView tv = new TextView(this);
             tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-            tv.setText("Favorito: " + parque.getNome() + "\n" +
-                      "Localização: " + parque.getEndereco());
+            tv.setText("Favorito:" + i);
+            //tv.setText("Favorito: " + parque.getNome() + "\n" +
+              //        "Localização: " + parque.getEndereco());
 
 
             ImageButton buttonFav = new ImageButton(this);
@@ -116,6 +117,7 @@ public class FavouritesActivity extends AppCompatActivity {
             buttonFav.setId(i);
             buttonFav.setImageResource(R.drawable.custom_button_fav);
             buttonFav.setActivated(true);
+            buttonFav.setX(600);
 
             buttonFav.setOnClickListener((a) -> {
                 if (buttonFav.isActivated()){
