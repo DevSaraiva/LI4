@@ -10,8 +10,7 @@ public interface IParques {
 
     Parque getParque(int id);
     public void addParque(Parque p);
-    Set<Parque> pesquisa(Preferencia p);
+    List<Parque> pesquisa(Preferencia p);
     Preferencia getPreferencia();
 
 }
-
