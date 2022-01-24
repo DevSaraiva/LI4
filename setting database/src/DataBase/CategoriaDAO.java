@@ -1,8 +1,7 @@
-package com.example.minhopark.DataBase;
+package DataBase;
 
 
-
-import com.example.minhopark.model.SSParques.Categoria;
+import model.SSParques.Categoria;
 
 import java.io.InputStream;
 import java.io.Serializable;
