@@ -7,11 +7,14 @@
     tools:context="com.example.minhopark.View.PesquisaActivity">
 
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="374dp"
-        android:layout_marginTop="360dp"
+        android:id="@+id/scrollView12"
+        android:layout_width="413dp"
+        android:layout_height="367dp"
+        android:layout_marginTop="364dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:id="@+id/btnLayout"
@@ -19,4 +22,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" />
     </ScrollView>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="427dp"
+        android:layout_height="371dp"
+        android:layout_marginBottom="368dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context="com.example.minhopark.View.MapsActivity" />
 </androidx.constraintlayout.widget.ConstraintLayout>

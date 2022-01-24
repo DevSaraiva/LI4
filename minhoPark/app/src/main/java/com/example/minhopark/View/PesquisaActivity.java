@@ -1,42 +1,43 @@
 package com.example.minhopark.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import com.example.MinhoPark.R;
-import com.example.MinhoPark.databinding.ActivityMaps2Binding;
-import com.example.minhopark.View.directionHelpers.FetchURL;
 import com.example.minhopark.model.SSParques.Parque;
 import com.example.minhopark.model.SSParques.SSParquesFacade;
 import com.example.minhopark.model.SSUtilizadores.Preferencia;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
 
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.concurrent.ExecutionException;
 
 
-public class PesquisaActivity extends AppCompatActivity {
+
+public class PesquisaActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+
+    private Set<Parque> parques;
+
+    private LatLng braga = new LatLng(41.5510583, -8.4280045);
+
 
 
     private class Connect extends AsyncTask<Void, Void, Set<Parque>> {
@@ -98,6 +99,8 @@ public class PesquisaActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        this.parques = parques;
+
 
         LinearLayout btn_layer= (LinearLayout) findViewById(R.id.btnLayout);
 
@@ -113,8 +116,8 @@ public class PesquisaActivity extends AppCompatActivity {
         }
 
 
-
-
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
     }
 
@@ -144,6 +147,30 @@ public class PesquisaActivity extends AppCompatActivity {
             texto = "GPS DESABILITADO";
         }
         return texto;
+
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+
+        for(Parque p : this.parques){
+
+            String[] coordenads = p.getCoordenadas().split(",");
+
+            LatLng coord = new LatLng(Double.parseDouble(coordenads[0]),Double.parseDouble(coordenads[1]));
+
+            mMap.addMarker(new MarkerOptions().position(coord).title(p.getNome()));
+
+        }
+
+
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(braga));
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
