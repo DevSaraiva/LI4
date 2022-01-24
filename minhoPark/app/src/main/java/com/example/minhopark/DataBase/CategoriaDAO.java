@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.*;
 
+import javax.sql.rowset.serial.SerialBlob;
+
 
 public class CategoriaDAO implements Serializable {
     private Connection connection;
@@ -44,7 +46,7 @@ public class CategoriaDAO implements Serializable {
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, categoria.getNome());
-            stmt.setBlob(2, ConnectDB.convertFileContentToBlob(categoria.getIconePath()));
+            stmt.setBlob(2, new SerialBlob(categoria.getIcone()));
             stmt.execute();
             return true;
         } catch (SQLException e) {

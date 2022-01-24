@@ -10,107 +10,84 @@
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="414dp"
-        android:layout_height="251dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="232dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context="com.example.minhopark.View.MapsActivity" />
+        android:layout_width="412dp"
+        android:layout_height="238dp"
+        tools:context="com.example.minhopark.View.MapsActivity"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-3dp" />
 
     <ImageView
         android:id="@+id/parkImg"
-        android:layout_width="171dp"
-        android:layout_height="166dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="49dp"
-        app:layout_constraintEnd_toStartOf="@+id/Categoria"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"
+        android:layout_width="402dp"
+        android:layout_height="206dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="236dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/nomeParque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="7dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/Categoria"
-        app:layout_constraintEnd_toEndOf="@+id/Categoria" />
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="477dp" />
 
     <TextView
         android:id="@+id/Categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="108dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/parkImg"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="509dp" />
 
     <TextView
         android:id="@+id/Horario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/Categoria"
-        app:layout_constraintTop_toBottomOf="@+id/Categoria" />
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="541dp" />
 
     <TextView
         android:id="@+id/estadoOperacional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/Horario"
-        app:layout_constraintTop_toBottomOf="@+id/Horario" />
-
-    <TextView
-        android:id="@+id/Endereco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="2dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/estadoOperacional"
-        app:layout_constraintTop_toBottomOf="@+id/estadoOperacional" />
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="575dp" />
 
     <TextView
         android:id="@+id/Distancia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="100dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Endereco" />
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="645dp" />
 
     <TextView
         android:id="@+id/rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginBottom="36dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Distancia" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/estadoOperacional" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="240dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"
-        app:srcCompat="@drawable/mostrarcaminho" />
+        android:layout_width="185dp"
+        android:layout_height="110dp"
+        app:srcCompat="@drawable/mostrarcaminho"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <TextView
+        android:id="@+id/Endereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="606dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

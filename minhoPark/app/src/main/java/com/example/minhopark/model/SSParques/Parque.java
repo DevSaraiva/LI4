@@ -8,7 +8,7 @@ public class Parque implements Serializable {
 
     int parqueID;
     String nome;
-    String image;
+    byte[] image;
     String endereco;
     String coordenadas;
     int numCriticas;
@@ -17,7 +17,7 @@ public class Parque implements Serializable {
     List<Categoria> categorias;
     EstadoOperacional estadoOp;
 
-    public Parque(int parqueID, String nome, String image, String endereco, String coordenadas, int numCriticas, float rating, List<Horario> horarios, List<Categoria> categorias) {
+    public Parque(int parqueID, String nome, byte[] image, String endereco, String coordenadas, int numCriticas, float rating, List<Horario> horarios, List<Categoria> categorias) {
         this.parqueID = parqueID;
         this.nome = nome;
         this.image = image;
@@ -46,7 +46,7 @@ public class Parque implements Serializable {
         return nome;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
@@ -70,7 +70,7 @@ public class Parque implements Serializable {
         return categorias;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
@@ -82,8 +82,8 @@ public class Parque implements Serializable {
         this.nome = nome;
     }
 
-    public void setImg(String pathToImg) {
-        this.image = pathToImg;
+    public void setImg(byte[] image) {
+        this.image = image;
     }
 
     public void setCoordenadas(String coordenadas) {

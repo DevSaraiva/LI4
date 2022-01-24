@@ -36,29 +36,6 @@ import java.sql.*;
 
 
 
-        public static Blob convertFileContentToBlob(String filePath){
-
-            if(filePath == null) return null;
-
-
-            File fi = new File(filePath);
-
-            Blob blob = null;
-
-            try{
-                byte[] fileContent = new byte[0];
-
-                fileContent = Files.readAllBytes(fi.toPath());
-
-                blob = new SerialBlob(fileContent);
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-            return blob;
-        }
-
 
 
 

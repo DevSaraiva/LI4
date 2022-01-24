@@ -7,10 +7,13 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.MinhoPark.R;
@@ -118,6 +121,13 @@ public class DetalhesParque extends AppCompatActivity {
         TextView tv7 = (TextView)findViewById(R.id.rating);
         tv7.setText(String.valueOf(parque.getRating()));
 
+
+
+
+        byte[] picData = parque.getImage();
+        ImageView imgPerson = (ImageView) findViewById(R.id.parkImg);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(picData, 0, picData.length);
+        imgPerson.setImageBitmap(bitmap);
 
 
 

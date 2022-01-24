@@ -6,19 +6,18 @@ import java.io.Serializable;
 public class Categoria implements Serializable {
 
     String nome;
-    String iconePath;
+    byte[] icone;
 
 
-    public Categoria(String nome, String iconePath) {
+    public Categoria(String nome, byte[] icone) {
         this.nome = nome;
-        this.iconePath = iconePath;
+        this.icone = icone;
     }
 
     @Override
     public String toString() {
         return "Categoria{" +
                 "idCategoria=" + nome +
-                ", iconePath='" + iconePath + '\'' +
                 '}';
     }
 
@@ -30,11 +29,11 @@ public class Categoria implements Serializable {
         this.nome = nome;
     }
 
-    public String getIconePath() {
-        return iconePath;
+    public byte[] getIcone() {
+        return icone;
     }
 
-    public void setIconePath(String iconePath) {
-        this.iconePath = iconePath;
+    public void setIconePath(byte[] icone) {
+        this.icone = icone;
     }
 }

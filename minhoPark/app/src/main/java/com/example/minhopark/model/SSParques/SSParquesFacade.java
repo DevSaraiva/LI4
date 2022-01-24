@@ -90,7 +90,18 @@ public class SSParquesFacade implements IParques, Serializable {
         return  this.utilizador.getPreferencia();
     }
 
+    public static void main(String args[]){
 
+
+        Preferencia p = new Preferencia();
+
+        SSParquesFacade ssParquesFacade = new SSParquesFacade(p,null);
+
+        System.out.println(ssParquesFacade.pesquisa(p));
+
+
+
+    }
 
 
 
