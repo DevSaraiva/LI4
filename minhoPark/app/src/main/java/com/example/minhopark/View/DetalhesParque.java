@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +44,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
     Parque parque;
     private GoogleMap mMap;
+    String veiculo;
 
     private class Connect extends AsyncTask<Void, Void, Parque> {
 
@@ -49,6 +52,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         Preferencia preferencia;
         Set<Integer> favoritos;
         int id;
+
 
 
         public  Connect(Preferencia p , Set<Integer> favoritos, int id){
@@ -186,18 +190,40 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         imgPerson.setImageBitmap(bitmap);
 
 
+        //Botao para selecionar transporte
+
+        RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup);
+
+        int meioTransporte = r.getCheckedRadioButtonId();
+
+        switch(meioTransporte){
+            case R.id.pe:
+                this.veiculo="pe";
+                break;
+            case R.id.carro:
+                this.veiculo="carro";
+                break;
+            case R.id.bicicleta:
+                this.veiculo="bicicleta";
+                break;
+        }
+
+
+
         //Botao para IR para o mapa
 
         Button botaoIr = findViewById(R.id.buttonIr);
-        botaoIr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
-                intent.putExtra("loc",p.getLoc());
-                intent.putExtra("coordenadas", parque.getCoordenadas());
-                startActivity(intent);
-            }
+        botaoIr.setOnClickListener((a) ->{
+            Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
+            intent.putExtra("loc",p.getLoc());
+            intent.putExtra("coordenadas", parque.getCoordenadas());
+            intent.putExtra("veiculo", Boolean.parseBoolean(this.veiculo));
+            startActivity(intent);
         });
+
+
+
+
 
 
 

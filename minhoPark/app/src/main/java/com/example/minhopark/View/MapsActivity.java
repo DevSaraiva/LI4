@@ -24,9 +24,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ActivityMaps2Binding binding;
     private Polyline currentPolyline;
 
-    //TODO: pus isto aqui por ser um exemplo, tem que ser feito load a partir da BD
-    private LatLng braga = new LatLng(41.5510583, -8.4280045);
-    private LatLng barcelos =  new LatLng(41.5314496, -8.6192306);
+    private LatLng utilizador;
+    private LatLng parque;
 
 
     @Override
@@ -37,10 +36,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String[] coordUtilizadores = getIntent().getStringExtra("loc").split(",");
         String[] coordParque = getIntent().getStringExtra("coordenadas").split(",");
 
-        LatLng utilizador = new LatLng(Double.parseDouble(coordUtilizadores[0]),Double.parseDouble(coordUtilizadores[1]));
-        LatLng parque = new LatLng(Double.parseDouble(coordParque[0]),Double.parseDouble(coordParque[1]));
-
-
+        utilizador = new LatLng(Double.parseDouble(coordUtilizadores[0]),Double.parseDouble(coordUtilizadores[1]));
+        parque = new LatLng(Double.parseDouble(coordParque[0]),Double.parseDouble(coordParque[1]));
 
 
         binding = ActivityMaps2Binding.inflate(getLayoutInflater());
@@ -68,10 +65,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        adicionaMarker(mMap, braga, "Braga");
-        adicionaMarker(mMap, barcelos, "Barcelos");
+        adicionaMarker(mMap, utilizador, "Minha Localização");
+        adicionaMarker(mMap, parque, "Parque");
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(braga));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(parque));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(parque, 12.0f));
     }
 
 

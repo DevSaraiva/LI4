@@ -134,7 +134,7 @@
         app:layout_constraintTop_toTopOf="@+id/map" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonIr"
         android:layout_width="33dp"
         android:layout_height="28dp"
         android:layout_marginStart="116dp"
@@ -150,6 +150,7 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="26dp"
         android:layout_height="95dp"
         android:layout_marginTop="40dp"
@@ -157,17 +158,17 @@
         app:layout_constraintTop_toTopOf="@+id/menuir">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/pe"
             android:layout_width="match_parent"
             android:layout_height="24dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/bicicleta"
             android:layout_width="26dp"
             android:layout_height="33dp" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/carro"
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
