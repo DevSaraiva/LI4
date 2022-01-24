@@ -19,7 +19,7 @@ public class Horario implements Serializable {
     }
 
     public String toString() {
-        return dia + ": " + abertura +" -> " + encerramento+"\n";
+        return dia + ": " + abertura +" -> " + encerramento;
     }
 
     public int getIdHorario() {

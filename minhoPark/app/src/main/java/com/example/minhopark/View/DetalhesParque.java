@@ -16,8 +16,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.MinhoPark.R;
 import com.example.minhopark.model.SSParques.Categoria;
@@ -88,7 +90,11 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
         //gerar Favoritos
 
-        Set<Integer> facvoritos = new TreeSet<>();
+        Set<String> favoritosString = prefs.getStringSet("chaveFavoritos", new TreeSet<>());
+        Set<Integer> favoritos = new TreeSet<>();
+        for (String s : favoritosString) {
+            favoritos.add(Integer.parseInt(s));
+        }
 
 
 
@@ -102,13 +108,46 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
         //Get Parque
 
-        Connect task = new Connect(p,facvoritos,getIntent().getIntExtra("parqueID",1));
+        Connect task = new Connect(p,favoritos,getIntent().getIntExtra("parqueID",1));
         try {
             parque = task.execute().get();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        ImageButton buttonFav = findViewById(R.id.imageButtonFav);
+
+        // ja esta nos favoritos
+        if (favoritos.contains(parque.getParqueID())) {
+            buttonFav.setActivated(true);
+        } else { // nao esta nos favoritos
+            buttonFav.setActivated(false);
+        }
+
+        buttonFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (buttonFav.isActivated()){
+                    favoritos.remove(parque.getParqueID());
+                    buttonFav.setActivated(false);
+                } else {
+                    favoritos.add(parque.getParqueID());
+                    buttonFav.setActivated(true);
+                }
+                // grava toda a vez que clica na estrela secalhar meter só a gravar quando sai deste menu (Falta botao voltar atras)
+                Set<String> favoritosGravar = new TreeSet<>();
+                for (Integer x : favoritos) {
+                    favoritosGravar.add(x.toString());
+                }
+                SharedPreferences prefs = getSharedPreferences("chaveGeral", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putStringSet("chaveFavoritos", favoritosGravar);
+                editor.commit();
+
+
+                //Toast.makeText(DetalhesParque.this, "Click", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         TextView tv1 = (TextView)findViewById(R.id.nomeParque);
         tv1.setText(parque.getNome());
@@ -122,8 +161,8 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         tv3.setText(ListToStringHorario(parque.getHorarios()));
 
 
-        TextView tv4 = (TextView)findViewById(R.id.estadoOperacional);
-        tv4.setText("Operacional");
+       TextView tv4 = (TextView)findViewById(R.id.estadoOperacional);
+       tv4.setText("Operacional");
 
 
         TextView tv5 = (TextView)findViewById(R.id.Endereco);
@@ -212,6 +251,8 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         mMap.addMarker(new MarkerOptions().position(coord).title(parque.getNome()));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coord));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coord, 12.0f));
     }
 
     @Override

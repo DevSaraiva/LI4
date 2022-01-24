@@ -72,7 +72,7 @@ public class SSParquesFacade implements IParques, Serializable {
             double d2 = distance(Double.parseDouble(coordenadasP2[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP2[1]),Double.parseDouble(coordenadasInicio[1]));
 
 
-            return Double.compare(d2,d1);
+            return Double.compare(d1,d2);
 
         });
 
@@ -99,6 +99,14 @@ public class SSParquesFacade implements IParques, Serializable {
 
     public Preferencia getPreferencia(){
         return  this.utilizador.getPreferencia();
+    }
+
+    public List<Parque> getParquesFavoritos (Set<Integer> favoritos) {
+        List<Parque> parquesFavoritos = new ArrayList<>();
+        for (Integer id : favoritos) {
+            parquesFavoritos.add(parques.getParque(id));
+        }
+        return parquesFavoritos;
     }
 
     public static void main(String args[]){
