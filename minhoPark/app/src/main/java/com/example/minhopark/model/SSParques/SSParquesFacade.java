@@ -101,6 +101,14 @@ public class SSParquesFacade implements IParques, Serializable {
         return  this.utilizador.getPreferencia();
     }
 
+    public List<Parque> getParquesFavoritos (Set<Integer> favoritos) {
+        List<Parque> parquesFavoritos = new ArrayList<>();
+        for (Integer id : favoritos) {
+            parquesFavoritos.add(parques.getParque(id));
+        }
+        return parquesFavoritos;
+    }
+
     public static void main(String args[]){
 
 
