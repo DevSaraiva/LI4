@@ -30,6 +30,7 @@ import com.example.minhopark.model.SSUtilizadores.Preferencia;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -86,16 +87,7 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         Preferencia p = new Preferencia(loc, nParques, portagens, tipos);
 
 
-        //Botao para IR para o mapa
-       /* Button botaoIr = findViewById(R.id.buttonIr);
-        botaoIr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-*/
+
         //gerar Favoritos
 
         Set<String> favoritosString = prefs.getStringSet("chaveFavoritos", new TreeSet<>());
@@ -103,6 +95,15 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         for (String s : favoritosString) {
             favoritos.add(Integer.parseInt(s));
         }
+
+
+
+        //mapa
+
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
 
 
         //Get Parque
@@ -160,8 +161,8 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         tv3.setText(ListToStringHorario(parque.getHorarios()));
 
 
-        TextView tv4 = (TextView)findViewById(R.id.estadoOperacional);
-        tv4.setText("Operacional");
+       TextView tv4 = (TextView)findViewById(R.id.estadoOperacional);
+       tv4.setText("Operacional");
 
 
         TextView tv5 = (TextView)findViewById(R.id.Endereco);
@@ -176,19 +177,29 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
 
 
         TextView tv6 = (TextView)findViewById(R.id.Distancia);
-        tv6.setText(String.valueOf("Distancia" + dist));
+        tv6.setText(String.valueOf("Distancia ->" + dist));
 
 
         TextView tv7 = (TextView)findViewById(R.id.rating);
-        tv7.setText(String.valueOf("Rating" + parque.getRating()));
-
-
+        tv7.setText(String.valueOf("Rating ->" + parque.getRating()));
 
 
         byte[] picData = parque.getImage();
         ImageView imgPerson = (ImageView) findViewById(R.id.parkImg);
         Bitmap bitmap = BitmapFactory.decodeByteArray(picData, 0, picData.length);
         imgPerson.setImageBitmap(bitmap);
+
+
+        //Botao para IR para o mapa
+       /* Button botaoIr = findViewById(R.id.buttonIr);
+        botaoIr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetalhesParque.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+*/
 
 
 
@@ -240,6 +251,8 @@ public class DetalhesParque extends FragmentActivity implements OnMapReadyCallba
         mMap.addMarker(new MarkerOptions().position(coord).title(parque.getNome()));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coord));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coord, 12.0f));
     }
 
     @Override

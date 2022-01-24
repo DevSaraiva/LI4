@@ -19,7 +19,7 @@ import java.sql.*;
 
 
             try {
-                return DriverManager.getConnection("jdbc:mysql://localhoost:3306/minhoPark?autoReconnect=true&useSSL=false","root","password");
+                return DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/minhoPark?autoReconnect=true&useSSL=false","root","password");
             } catch (SQLException e) {
                 e.printStackTrace();
             }

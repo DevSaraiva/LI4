@@ -89,26 +89,26 @@ public class FavouritesActivity extends AppCompatActivity {
 
        LinearLayout layer= (LinearLayout) findViewById(R.id.btnLayout);
 
+
         for (Integer i : favoritos) {
             LinearLayout parque_layout= new LinearLayout(this);
             parque_layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
             parque_layout.setOrientation(LinearLayout.HORIZONTAL);
 
             //Get Parque
-            /*Parque parque = null;
-            DetalhesParque.Connect task = new DetalhesParque.Connect(p,favoritos,i);
+
+            Parque parque = null;
+            Connect task = new Connect(p,favoritos,i);
             try {
                 parque = task.execute().get();
             } catch (Exception e) {
                 e.printStackTrace();
-            }*/
+            }
 
             TextView tv = new TextView(this);
             tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-
-            tv.setText("Favorito: "+ i);
-            //tv.setText("Favorito: " + parque.getNome() + "\n" +
-              //      "Localização: " + parque.getEndereco());
+            tv.setText("Favorito: " + parque.getNome() + "\n" +
+                      "Localização: " + parque.getEndereco());
 
 
             ImageButton buttonFav = new ImageButton(this);

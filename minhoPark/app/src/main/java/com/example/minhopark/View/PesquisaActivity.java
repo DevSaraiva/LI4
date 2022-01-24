@@ -171,6 +171,8 @@ public class PesquisaActivity extends FragmentActivity implements OnMapReadyCall
 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coord));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coord, 10.0f));
     }
 
     @Override

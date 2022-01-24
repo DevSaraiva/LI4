@@ -72,7 +72,7 @@ public class SSParquesFacade implements IParques, Serializable {
             double d2 = distance(Double.parseDouble(coordenadasP2[0]),Double.parseDouble(coordenadasInicio[0]),Double.parseDouble(coordenadasP2[1]),Double.parseDouble(coordenadasInicio[1]));
 
 
-            return Double.compare(d2,d1);
+            return Double.compare(d1,d2);
 
         });
 
